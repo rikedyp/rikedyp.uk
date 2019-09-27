@@ -1,0 +1,42 @@
+/*Mobile*/
+body{
+  background: #1b998b;
+  font-family: Courier, Bookman, Helvetica Neue, Helvetica, Arial;
+  color: white;
+  text-decoration: none;
+  overflow-x: hidden;
+  height: 100%
+  font-size: 1.3em;
+}
+hr { 
+  border: 0; 
+  height: 1px; 
+  background-image: -webkit-linear-gradient(left, #f0f0f0, #991b29, #f0f0f0);
+  background-image: -moz-linear-gradient(left, #f0f0f0, #991b29, #f0f0f0);
+  background-image: -ms-linear-gradient(left, #f0f0f0, #991b29, #f0f0f0);
+  background-image: -o-linear-gradient(left, #f0f0f0, #991b29, #f0f0f0); 
+}
+.h0 {
+  font-size: 13vw;
+}
+h1 {
+  font-size: 3em;
+  text-align: center;
+}
+.center {
+  display: block;
+  text-align: center;
+}
+#iconpanel {
+  display: flex;
+  justify-content: space-around;
+}
+#iconpanel img {
+  height: 15vh;
+}
+/*Desktop*/
+@media screen and (min-width: 400px) {
+  .h0 {
+    font-size: 5em;
+  }
+}
