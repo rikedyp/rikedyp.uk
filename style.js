@@ -16,14 +16,15 @@ var bgcolors = [
   "#000000"
 ]
 
-var coldelay = 3500;
+var tTime = 3;
+var tDelay = 3000;
 
-window.onload = function() {
-  document.body.style.transition = "background 1s";
-  var intervalID = window.setInterval(bgFade, coldelay);
+window.onload = function() {  
+  document.body.style.transition = "background " + tTime + "s";
+  var intervalID = window.setInterval(bgFade, tDelay);
 }
 
 function bgFade(){
   var col = Math.floor(Math.random() * bgcolors.length);
-  document.body.style.background = bgcolors[col];
+  document.body.style.background = bgcolors[col];  
 }

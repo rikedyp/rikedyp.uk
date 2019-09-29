@@ -35,7 +35,12 @@ h3 {
   justify-content: space-around;
 }
 #iconpanel img {
-  height: 15vh;
+  height: 13vh;
+  transition: height ease-out 0.3s;
+}
+img.imglink:hover {
+  height: 15vh!important;
+  transition: height ease-out 0.3s;
 }
 /*Desktop*/
 @media screen and (min-width: 1000px) {
