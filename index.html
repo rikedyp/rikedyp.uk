@@ -1,19 +1,40 @@
 <!DOCTYPE HTML>
+<!-- TODO
+- Right/Left key slideshow 
+- Verify no JS still looks good
+- Verify mobile
+- Style move slideshow buttons
+- Preloaded APLphys simulation!
+- Selected deviations
+- Selected sound clouds
+-->
 <html>
   <head>
     <title>RikedyPortfolio</title>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" type="text/css" href="style.css" />
-    <script src="script.js"></script>
+    <link rel="stylesheet" type="text/css" href="rikedyp/style.css" />
+    <link rel="stylesheet" href="flickity/flickity.min.css" media="screen">
+    <script src="rikedyp/script.js"></script>
+    <script src="flickity/flickity.pkgd.min.js"></script>
+
   </head>
   <body>
     <div class="h0 center">RikedyP.uk</div>
-    <h3 class="center">RikedyPortfolio</h3>
+    <h3 class="center">RikedyPortfolio</h3>    
     <hr />
     
-    <div class="imgSlideShow">
-    
+    <div class="main-carousel" data-flickity='{ "cellAlign": "left", "contain": true, "wrapAround": true, "fullScreen": true }'>
+      <div class="carousel-cell">
+        <img class="slide" src="img/clouds.jpg" />
+      </div>
+      <div class="carousel-cell">
+        <img class="slide" src="img/retro-controller.png" />
+      </div>
+      <div class="carousel-cell">
+        <img class="slide" src="img/日本語.png" />
+      </div> 
     </div>
+    <hr />
     
     <div id="iconPanel">
       <div class="imgLink">
