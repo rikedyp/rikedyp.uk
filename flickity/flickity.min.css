@@ -8,8 +8,12 @@ https://flickity.metafizzy.co
   display: flex;
   align-items: center;
   justify-content: center;
+  /* vertical-align: middle; */
+  /* display: inline; */
 }
 .carousel-cell img {
   border: solid 10px;
-  height: 50vh;
+  /* vertical-align: middle; */
+  /* display: inline; */
+  width: 60vw;
 }

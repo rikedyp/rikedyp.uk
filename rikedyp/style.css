@@ -38,15 +38,15 @@ h3 {
 }
 #iconPanel {
   text-align: justify;
-  margin: 0 13vw 0 13vw;
+  /* border-top: solid 30px; */
+  margin: 30px 4vw 0 4vw;
 }
 #iconPanel div {
   text-align: center;
-  height: 13vh;
   display: inline-block;
 }
 #iconPanel img {
-  height: 13vh;
+  height: 7vw;
 }
 #iconPanel:after {
   content: ' ';
