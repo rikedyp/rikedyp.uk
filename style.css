@@ -29,26 +29,26 @@ h3 {
 .center {
   text-align: center;
 }
-#iconpanel .label{
+#iconPanel .label{
   opacity: 0;
 }
-#iconpanel a:hover + .label {
+#iconPanel a:hover + .label {
   opacity: 100;
   transition: opacity 0.3s;
 }
-#iconpanel {
+#iconPanel {
   text-align: justify;
-  margin: 0 13vw 0 13vw;
+  margin: 0 2vw 0 2vw;
 }
-#iconpanel div {
+#iconPanel div {
   text-align: center;
-  height: 13vh;
+  height: 13vw;
   display: inline-block;
 }
-#iconpanel img {
-  height: 13vh;
+#iconPanel img {
+  height: 13vw;
 }
-#iconpanel:after {
+#iconPanel:after {
   content: ' ';
   width: 100%; /* Ensures there are at least 2 lines of text, so justification works */
   display: inline-block;
@@ -61,5 +61,8 @@ h3 {
   }
   h3 {
     font-size: 2em;
+  }
+  #iconPanel img {
+    height: 8vw;
   }
 }
