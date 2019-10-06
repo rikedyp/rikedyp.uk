@@ -29,11 +29,8 @@ h3 {
 .center {
   text-align: center;
 }
-#iconPanel .label{
-  opacity: 0;
-}
 #iconPanel a:hover + .label {
-  opacity: 100;
+  opacity: 1;
   transition: opacity 0.3s;
 }
 #iconPanel {
@@ -64,5 +61,8 @@ h3 {
   }
   #iconPanel img {
     height: 8vw;
+  }
+  #iconPanel .label{
+    opacity: 0;
   }
 }

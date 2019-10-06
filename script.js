@@ -16,19 +16,15 @@ var bgcolors = [
   "#000000"
 ]
 
-var tTime = 3;
-var tDelay = 3000;
+var tTime = 3;     // BG colour transition time
+var tDelay = 3000; // Delay between BG colour transitions
 
-window.onload = function() {  
+window.onload = function(){  
   document.body.style.transition = "background " + tTime + "s";
-  var intervalID = window.setInterval(bgFade, tDelay);
+  var tInterval = window.setInterval(bgFade, tDelay);
 }
 
 function bgFade(){
   var col = Math.floor(Math.random() * bgcolors.length);
   document.body.style.background = bgcolors[col];  
-}
-
-function toggle(divID){
-  document.getElementById(divID).show();
 }
