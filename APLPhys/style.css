@@ -1,0 +1,36 @@
+* {
+  font-family: courier;
+}
+body {
+  background: green;
+}
+.apl {
+  font-family: "APL333";
+}
+#APLPhys {
+  display: block;
+  text-align: center;
+}
+#APLPhys button {
+  height: 10vh;
+  width: 20vw;
+  font-size: 2em;
+}
+#APControl {
+  display: flex;
+  justify-content: space-around;
+  background: grey;
+}
+#APView {
+  display: block;
+  /* background: grey; */
+}
+#viewport {
+  background: transparent;
+  width: 90vw;
+  heigh: 60vw;
+}
+/*Desktop*/
+@media screen and (min-width: 1000px) {
+  
+}
