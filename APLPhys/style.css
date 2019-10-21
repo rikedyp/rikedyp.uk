@@ -27,8 +27,8 @@ body {
 }
 #viewport {
   background: transparent;
-  width: 90vw;
-  heigh: 60vw;
+  width: 60vw;
+  heigh: 30vh;
 }
 /*Desktop*/
 @media screen and (min-width: 1000px) {

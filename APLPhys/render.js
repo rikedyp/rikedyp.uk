@@ -4,6 +4,7 @@ var scale = 12;
 var wallQ = [];
 var walls = [];
 var posQ = [];
+var pos = [];
 var wallSPS;
 var wallPlanes = [];
 var SPS;
@@ -20,15 +21,15 @@ var playing = 0;
 window.onload = function() {
   canvas = document.getElementById("viewport");  
   load();
+  loadScene();
 }
 
-async function loadScene() {
-  //await load();
+async function loadScene() {  
   wakeBaby();
 }
 
 async function wakeBaby() {
-  await(load);
+  await load;
   baby = new BABYLON.Engine(canvas, true);
   //walls = wallQ[0];
   //await load();
@@ -45,7 +46,55 @@ async function load() {
   $.getJSON("./wallQ.json", function(json) {
     wallQ = json;
   });
-  console.log("loaded files");
+}
+
+function startStop() {
+  if (!playing) {
+    nextFrame();
+  } else {
+    clearTimeout(timer)
+  }
+  playing = !playing; 
+}
+
+function restart() {
+  playFrame = 0;
+  playing = 0;
+  clearTimeout(timer);
+  stepScene();
+}
+
+function fullScreen() {
+  baby.switchFullscreen(true);
+}
+
+function nextFrame() {
+  stepScene();
+  timer = setTimeout("nextFrame()", frameTime);
+}
+
+function stepScene() {
+  if (posQ.length === 0) {return;}
+  if (playFrame > posQ.length) {startStop();return;}
+  // Get latest positions, update step counter
+  pos = posQ[playFrame];
+  playFrame += pbmult;
+  // Update particle positions in Babylon SolidParticleSystem
+  SPS.updateParticle = updateParticle;
+  SPS.setParticles();
+  // Update wall positions in scene 
+  // if (wallQ[0].length > 1) {
+    // wallmove = wallQ[playFrame];
+    // wallSPS.updateParticle = updateWalls;
+    // wallSPS.setParticles();
+  // }
+}
+
+var updateParticle = function(particle){
+  var pid = particle.idx
+  particle.position.x = pos[pid][0]*scale;
+  particle.position.y = pos[pid][1]*scale;
+  particle.position.z = pos[pid][2]*scale;
 }
 
 var createScene = function(engine) {
@@ -53,12 +102,42 @@ var createScene = function(engine) {
   scene.clearColor = new BABYLON.Color4(0, 0, 0, 0);
   var camera = new BABYLON.ArcRotateCamera("Camera", 30, 1, 30, new BABYLON.Vector3(7, 5, 4), scene);
   camera.attachControl(canvas, true);
+  // var fsButton = document.getElementById("fsButton");
+  // fsButton.addEventListener("click", function() {
+    // engine.switchFullscreen(true);
+  // });
+  // GUI
+  var advancedTexture = BABYLON.GUI.AdvancedDynamicTexture.CreateFullscreenUI("myUI");
+  var panel = new BABYLON.GUI.StackPanel();
+  panel.width = "100%";
+  panel.bottom = 0;
+  panel.isVertical = 0;
+  advancedTexture.addControl(panel);
+  var button = BABYLON.GUI.Button.CreateSimpleButton("but", "▶ ");
+  button.width = "30px";
+  button.height = "30px";
+  button.color = "#ffffff";
+  button.background = "black";
+  panel.addControl(button);
+  var slider = new BABYLON.GUI.Slider();
+  slider.minimum = 0;
+  console.log(posQ.length);
+  slider.maximum = 5000;
+  slider.value = 0;
+  slider.height = "20px";
+  slider.width = "200px";
+  slider.onValueChangedObservable.add(function(value) {
+    playFrame = value;
+    stepScene();
+  });
+  panel.addControl(slider);
+  
   var light = new BABYLON.HemisphericLight("Light", new BABYLON.Vector3(0, 1, 0), scene);
-  //var ground = BABYLON.Mesh.CreateGround('ground1', scale*10, scale*10, 20, scene);
-  //ground.position = new BABYLON.Vector3((scale/2),0,(scale/2));
-  //var groundmesh = new BABYLON.StandardMaterial("groundmesh", scene);
-  //groundmesh.wireframe = true;
-  //ground.material = groundmesh;
+  var ground = BABYLON.Mesh.CreateGround('ground1', scale*10, scale*10, 20, scene);
+  ground.position = new BABYLON.Vector3((scale/2),0,(scale/2));
+  var groundmesh = new BABYLON.StandardMaterial("groundmesh", scene);
+  groundmesh.wireframe = true;
+  ground.material = groundmesh;
   // Create APLPhys walls 
   // var wallPos = [];
   // wallSPS = new BABYLON.SolidParticleSystem("babywalls", scene);
@@ -105,41 +184,3 @@ var createScene = function(engine) {
   return scene;
 }
 
-function startStop() {
-  if (!playing) {
-    nextFrame();
-  } else {
-    clearTimeout(timer)
-  }
-  playing = !playing; 
-}
-
-function nextFrame() {
-  stepScene();
-  timer = setTimeout("nextFrame()", frameTime);
-}
-
-function stepScene() {
-  console.log(playFrame);
-  if (posQ.length === 0) {return;}
-  if (playFrame > posQ.length) {startStop();return;}
-  // Get latest positions, update step counter
-  pos = posQ[playFrame];
-  playFrame += pbmult;
-  // Update particle positions in Babylon SolidParticleSystem
-  SPS.updateParticle = updateParticle;
-  SPS.setParticles();
-  // Update wall positions in scene 
-  // if (wallQ[0].length > 1) {
-    // wallmove = wallQ[playFrame];
-    // wallSPS.updateParticle = updateWalls;
-    // wallSPS.setParticles();
-  // }
-}
-
-var updateParticle = function(particle){
-  var pid = particle.idx
-  particle.position.x = pos[pid][0]*scale;
-  particle.position.y = pos[pid][1]*scale;
-  particle.position.z = pos[pid][2]*scale;
-}

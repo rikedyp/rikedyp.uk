@@ -5,7 +5,10 @@
     <link rel="stylesheet" type="text/css" href="style.css" />
     <script src="jquery.min.js"></script>
     <script type="text/javascript" src="render.js"></script>
-    <script type="text/javascript" src="./babylon.js"></script>
+    <!-- <script type="text/javascript" src="/APLPhys/babylon.js"></script> -->
+    <!-- <script src="/APLPhys/babylon.gui.js"></script> -->
+    <script src="https://cdn.babylonjs.com/babylon.js"></script>
+    <script src="https://cdn.babylonjs.com/gui/babylon.gui.min.js"></script>
   </head>
   <body>    
     <hr>
@@ -22,10 +25,10 @@
         </canvas>
       </div>
       
-      <div id="APControl">
-        <button onclick="loadScene()">Load</button>
-        <button onclick="startStop();">Play/Stop</button>
-        <button>Restart</button>
+      <div id="APControl">        
+        <button onclick="startStop();">Play/Pause</button>
+        <button onclick="restart();">Restart</button>
+        <button onclick="fullScreen();">FullScreen</button>
       </div>
     
     </div>
