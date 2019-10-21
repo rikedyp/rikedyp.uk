@@ -110,27 +110,63 @@ var createScene = function(engine) {
   var advancedTexture = BABYLON.GUI.AdvancedDynamicTexture.CreateFullscreenUI("myUI");
   var panel = new BABYLON.GUI.StackPanel();
   panel.width = "100%";
-  panel.bottom = 0;
+  panel.top = "43%";
   panel.isVertical = 0;
   advancedTexture.addControl(panel);
-  var button = BABYLON.GUI.Button.CreateSimpleButton("but", "▶ ");
-  button.width = "30px";
-  button.height = "30px";
-  button.color = "#ffffff";
-  button.background = "black";
-  panel.addControl(button);
+  var playButton = BABYLON.GUI.Button.CreateSimpleButton("play", "▶");
+  playButton.width = "30px";
+  playButton.height = "30px";
+  playButton.color = "white";
+  playButton.background = "black";
+  playButton.isPointerBlocker = true;
+  playButton.onPointerClickObservable.add(function() {
+    if (playing) {
+      playButton.children[0].text = "▶";
+      startStop();
+    } else {      
+      playButton.children[0].text = "⏸";
+      startStop();
+    }
+  }); 
+  var stopButton = BABYLON.GUI.Button.CreateSimpleButton("stop", "■");
+  stopButton.width = "30px";
+  stopButton.height = "30px";
+  stopButton.color = "white";
+  stopButton.background = "black"; 
+  stopButton.onPointerClickObservable.add(function() {
+    if (playing) {
+      playButton.children[0].text = "▶";
+      restart();
+    } else {      
+      playButton.children[0].text = "⏸";
+      restart();
+    }
+  });   
   var slider = new BABYLON.GUI.Slider();
   slider.minimum = 0;
   console.log(posQ.length);
   slider.maximum = 5000;
   slider.value = 0;
-  slider.height = "20px";
-  slider.width = "200px";
+  slider.height = "25px";
+  slider.width = "350px";
+  slider.left = "60px";
   slider.onValueChangedObservable.add(function(value) {
-    playFrame = value;
+    playFrame = Math.round(value);
     stepScene();
   });
+  var FSButton = new BABYLON.GUI.Button.CreateSimpleButton("FS", "⛶");
+  FSButton.height = "30px";
+  FSButton.width = "30px";
+  FSButton.color = "white";
+  FSButton.background = "black";
+ // FSButton.left = "80px";
+  FSButton.HORIZONTAL_ALIGNMENT_RIGHT;
+  FSButton.onPointerClickObservable.add(fullScreen);   
+  
+  panel.addControl(playButton);
+  panel.addControl(stopButton);
   panel.addControl(slider);
+  panel.addControl(FSButton);
   
   var light = new BABYLON.HemisphericLight("Light", new BABYLON.Vector3(0, 1, 0), scene);
   var ground = BABYLON.Mesh.CreateGround('ground1', scale*10, scale*10, 20, scene);
@@ -183,4 +219,5 @@ var createScene = function(engine) {
   
   return scene;
 }
+
 
