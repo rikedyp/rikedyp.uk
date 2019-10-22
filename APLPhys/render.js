@@ -31,11 +31,12 @@ async function loadScene() {
 async function wakeBaby() {
   await load;
   baby = new BABYLON.Engine(canvas, true);
-  //walls = wallQ[0];
-  //await load();
   var scene = createScene(baby);
   baby.runRenderLoop(function(){
     scene.render();
+  });
+  window.addEventListener("resize", function() {
+    baby.resize();
   });
 }
 
@@ -65,7 +66,7 @@ function restart() {
 }
 
 function fullScreen() {
-  baby.switchFullscreen(true);
+  baby.switchFullscreen(false);
 }
 
 function nextFrame() {
