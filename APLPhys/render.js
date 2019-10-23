@@ -101,7 +101,8 @@ var createScene = function(engine) {
   // GUI
   var advancedTexture = BABYLON.GUI.AdvancedDynamicTexture.CreateFullscreenUI("myUI");
   var panel = new BABYLON.GUI.StackPanel();
-  panel.width = "100%";
+  //panel.width = String(1.2*canvas.width) + "px";//"100%";
+  //panel.left = "10%";
   panel.height = "8%";
   panel.top = "46%";
   panel.background = "white";
@@ -130,7 +131,7 @@ var createScene = function(engine) {
   slider.maximum = 5000;
   slider.value = 0;
   slider.height = "15px";
-  slider.width = String(0.86 * canvas.width) +  "px";
+  slider.width = String(0.8 * canvas.width) +  "px";
   slider.onValueChangedObservable.add(function(value) {
     playFrame = Math.round(value);
     stepScene();
