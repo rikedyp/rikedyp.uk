@@ -3,7 +3,7 @@
 var scale = 12;
 var wallQ = [];
 var walls = [];
-var posQ = [];
+//var posQ = [];
 var pos = [];
 var wallSPS;
 var wallPlanes = [];
@@ -41,12 +41,7 @@ async function wakeBaby() {
 }
 
 async function load() {
-  $.getJSON("./posQ.json", function(json) {
-    posQ = json;
-  });
-  $.getJSON("./wallQ.json", function(json) {
-    wallQ = json;
-  });
+  posQ = JSON.parse(posQ);
 }
 
 function startStop() {
@@ -102,21 +97,21 @@ var createScene = function(engine) {
   var scene = new BABYLON.Scene(engine);
   scene.clearColor = new BABYLON.Color4(0, 0, 0, 0);
   var camera = new BABYLON.ArcRotateCamera("Camera", 30, 1, 30, new BABYLON.Vector3(7, 5, 4), scene);
-  camera.attachControl(canvas, true);
-  // var fsButton = document.getElementById("fsButton");
-  // fsButton.addEventListener("click", function() {
-    // engine.switchFullscreen(true);
-  // });
+  camera.attachControl(canvas);
   // GUI
   var advancedTexture = BABYLON.GUI.AdvancedDynamicTexture.CreateFullscreenUI("myUI");
   var panel = new BABYLON.GUI.StackPanel();
   panel.width = "100%";
-  panel.top = "43%";
+  panel.height = "8%";
+  panel.top = "46%";
+  panel.background = "white";
+  panel.alpha = 0.8;
   panel.isVertical = 0;
   advancedTexture.addControl(panel);
+  var buttonSize = String(Math.round(0.08 * canvas.height)) + "px";
   var playButton = BABYLON.GUI.Button.CreateSimpleButton("play", "▶");
-  playButton.width = "30px";
-  playButton.height = "30px";
+  playButton.width = buttonSize;
+  playButton.height = buttonSize;
   playButton.color = "white";
   playButton.background = "black";
   playButton.isPointerBlocker = true;
@@ -129,43 +124,26 @@ var createScene = function(engine) {
       startStop();
     }
   }); 
-  var stopButton = BABYLON.GUI.Button.CreateSimpleButton("stop", "■");
-  stopButton.width = "30px";
-  stopButton.height = "30px";
-  stopButton.color = "white";
-  stopButton.background = "black"; 
-  stopButton.onPointerClickObservable.add(function() {
-    if (playing) {
-      playButton.children[0].text = "▶";
-      restart();
-    } else {      
-      playButton.children[0].text = "⏸";
-      restart();
-    }
-  });   
   var slider = new BABYLON.GUI.Slider();
   slider.minimum = 0;
   console.log(posQ.length);
   slider.maximum = 5000;
   slider.value = 0;
-  slider.height = "25px";
-  slider.width = "350px";
-  slider.left = "60px";
+  slider.height = "15px";
+  slider.width = String(0.86 * canvas.width) +  "px";
   slider.onValueChangedObservable.add(function(value) {
     playFrame = Math.round(value);
     stepScene();
   });
   var FSButton = new BABYLON.GUI.Button.CreateSimpleButton("FS", "⛶");
-  FSButton.height = "30px";
-  FSButton.width = "30px";
+  FSButton.height = buttonSize;
+  FSButton.width = buttonSize;
   FSButton.color = "white";
   FSButton.background = "black";
- // FSButton.left = "80px";
   FSButton.HORIZONTAL_ALIGNMENT_RIGHT;
   FSButton.onPointerClickObservable.add(fullScreen);   
   
   panel.addControl(playButton);
-  panel.addControl(stopButton);
   panel.addControl(slider);
   panel.addControl(FSButton);
   
