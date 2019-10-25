@@ -1,5 +1,8 @@
 // render.js
 
+// TODO
+// Redraw / rescale on device rotation (mobile)
+
 var scale = 12;
 var wallQ = [];
 var walls = [];
@@ -101,20 +104,17 @@ var createScene = function(engine) {
   // GUI
   var advancedTexture = BABYLON.GUI.AdvancedDynamicTexture.CreateFullscreenUI("myUI");
   var panel = new BABYLON.GUI.StackPanel();
-  //panel.width = String(1.2*canvas.width) + "px";//"100%";
-  //panel.left = "10%";
   panel.height = "8%";
-  panel.top = "46%";
-  panel.background = "white";
-  panel.alpha = 0.8;
+  panel.top = "43%";
   panel.isVertical = 0;
   advancedTexture.addControl(panel);
-  var buttonSize = String(Math.round(0.08 * canvas.height)) + "px";
+  var buttonSize = String(Math.round(0.1 * canvas.height)) + "px";
   var playButton = BABYLON.GUI.Button.CreateSimpleButton("play", "▶");
   playButton.width = buttonSize;
   playButton.height = buttonSize;
+  playButton.fontSize = 30;
   playButton.color = "white";
-  playButton.background = "black";
+  playButton.thickness = 0;
   playButton.isPointerBlocker = true;
   playButton.onPointerClickObservable.add(function() {
     if (playing) {
@@ -127,20 +127,24 @@ var createScene = function(engine) {
   }); 
   var slider = new BABYLON.GUI.Slider();
   slider.minimum = 0;
-  console.log(posQ.length);
+  slider.color = "white";
+  slider.background = "black";
   slider.maximum = 5000;
   slider.value = 0;
   slider.height = "15px";
+  slider.step = 1;
+  slider.isThumbCircle = 1;
   slider.width = String(0.8 * canvas.width) +  "px";
   slider.onValueChangedObservable.add(function(value) {
-    playFrame = Math.round(value);
+    playFrame = value;
     stepScene();
   });
   var FSButton = new BABYLON.GUI.Button.CreateSimpleButton("FS", "⛶");
   FSButton.height = buttonSize;
   FSButton.width = buttonSize;
   FSButton.color = "white";
-  FSButton.background = "black";
+  FSButton.thickness = 0;
+  FSButton.fontSize = 30;
   FSButton.HORIZONTAL_ALIGNMENT_RIGHT;
   FSButton.onPointerClickObservable.add(fullScreen);   
   
