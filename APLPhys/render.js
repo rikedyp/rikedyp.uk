@@ -11,8 +11,8 @@ var pos = [];
 var wallSPS;
 var wallPlanes = [];
 var SPS;
-var groups = [2,1];
-var radii = [.1,.3];
+var groups = [1280,1];
+var radii = [.1,.1875];
 
 var canvas;
 var playFrame = 0;
@@ -20,6 +20,9 @@ var frameTime = 17;
 var pbmult = 1;
 var timer;
 var playing = 0;
+var slider;
+var playButton;
+var restarting = 0;
 
 window.onload = function() {
   canvas = document.getElementById("viewport");  
@@ -48,19 +51,27 @@ async function load() {
 }
 
 function startStop() {
-  if (!playing) {
-    nextFrame();
-  } else {
+  if (playing) {
+    playButton.children[0].text = "▶";
     clearTimeout(timer)
+    playing = 0;
+    if (playFrame < posQ.length) {
+      restarting = 0;
+    }
+  } else {
+    if (restarting) {
+      playFrame = 0;
+    }      
+    playButton.children[0].text = "⏸";
+    nextFrame();
+    playing = 1;
   }
-  playing = !playing; 
 }
 
-function restart() {
-  playFrame = 0;
-  playing = 0;
-  clearTimeout(timer);
-  stepScene();
+function end() {
+  startStop();
+  playButton.children[0].text = "↻";
+  restarting = 1;
 }
 
 function fullScreen() {
@@ -68,16 +79,18 @@ function fullScreen() {
 }
 
 function nextFrame() {
-  stepScene();
+  if (playing) {
+    playFrame += pbmult;
+    slider.value = playFrame;      
+  }
   timer = setTimeout("nextFrame()", frameTime);
 }
 
 function stepScene() {
-  if (posQ.length === 0) {return;}
-  if (playFrame > posQ.length) {startStop();return;}
+  if (playFrame > posQ.length - 1) {end();console.log("movie end");return false;}
+  console.log("step " + String(playFrame));
   // Get latest positions, update step counter
-  pos = posQ[playFrame];
-  playFrame += pbmult;
+  pos = posQ[playFrame];  
   // Update particle positions in Babylon SolidParticleSystem
   SPS.updateParticle = updateParticle;
   SPS.setParticles();
@@ -99,7 +112,7 @@ var updateParticle = function(particle){
 var createScene = function(engine) {
   var scene = new BABYLON.Scene(engine);
   scene.clearColor = new BABYLON.Color4(0, 0, 0, 0);
-  var camera = new BABYLON.ArcRotateCamera("Camera", 30, 1, 30, new BABYLON.Vector3(7, 5, 4), scene);
+  var camera = new BABYLON.ArcRotateCamera("Camera", 30, 1, 50, new BABYLON.Vector3(7, 10, 4), scene);
   camera.attachControl(canvas);
   // GUI
   var advancedTexture = BABYLON.GUI.AdvancedDynamicTexture.CreateFullscreenUI("myUI");
@@ -109,27 +122,19 @@ var createScene = function(engine) {
   panel.isVertical = 0;
   advancedTexture.addControl(panel);
   var buttonSize = String(Math.round(0.1 * canvas.height)) + "px";
-  var playButton = BABYLON.GUI.Button.CreateSimpleButton("play", "▶");
+  playButton = BABYLON.GUI.Button.CreateSimpleButton("play", "▶");
   playButton.width = buttonSize;
   playButton.height = buttonSize;
   playButton.fontSize = 30;
   playButton.color = "white";
   playButton.thickness = 0;
   playButton.isPointerBlocker = true;
-  playButton.onPointerClickObservable.add(function() {
-    if (playing) {
-      playButton.children[0].text = "▶";
-      startStop();
-    } else {      
-      playButton.children[0].text = "⏸";
-      startStop();
-    }
-  }); 
-  var slider = new BABYLON.GUI.Slider();
+  playButton.onPointerClickObservable.add(startStop); 
+  slider = new BABYLON.GUI.Slider();
   slider.minimum = 0;
   slider.color = "white";
   slider.background = "black";
-  slider.maximum = 5000;
+  slider.maximum = 400;
   slider.value = 0;
   slider.height = "15px";
   slider.step = 1;
@@ -138,6 +143,10 @@ var createScene = function(engine) {
   slider.onValueChangedObservable.add(function(value) {
     playFrame = value;
     stepScene();
+    if (!playing && playFrame < posQ.length) {
+      restarting = 0;         
+      playButton.children[0].text = "▶";
+    }
   });
   var FSButton = new BABYLON.GUI.Button.CreateSimpleButton("FS", "⛶");
   FSButton.height = buttonSize;
