@@ -1,6 +1,7 @@
 /*Mobile*/
 body{
   background: #1b998b;
+  transition: background 3s ease;
   font-family: Courier, Bookman, Helvetica Neue, Helvetica, Arial;
   color: white;
   text-decoration: none;
@@ -49,6 +50,11 @@ h3 {
   content: ' ';
   width: 100%; /* Ensures there are at least 2 lines of text, so justification works */
   display: inline-block;
+}
+.viewport { 
+  width: 60vw; 
+  height: 40vw; 
+  border: solid 10px;
 }
 /*Desktop*/
 @media screen and (min-width: 1000px) {

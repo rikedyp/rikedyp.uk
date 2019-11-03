@@ -1,0 +1,15 @@
+⍝ LJmelt.aplphys
+⍝ Demo APLPhys script
+⍝ Simulation parameters
+periodic ← 1
+∆t ← 0.0032
+fixtemp ← 0.5
+ 
+CreateBox 30 30
+CreateAtoms 32 random random
+PairStyle 'LJcutOpt' 2.5 1
+Thermostat ← TempRescale
+RunStyle ← Verlet
+ 
+dumpfreq ← 10
+MiSim 3000

@@ -25,11 +25,17 @@ var slideIndex = 1;
 
 // Wait for page to load. Set up & trigger BG colour transitions. Show first image slide.
 window.onload = function() {  
-  document.body.style.transition = "background " + tTime + "s";
+  // document.body.style.transition = "background " + tTime + "s";
   var intervalID = window.setInterval(bgFade, tDelay);
+  startStop();
+}
+
+rndCol = function(list) {
+  var n = Math.floor(Math.random() * bgcolors.length);
+  return list[n];
 }
 
 function bgFade(){
-  var col = Math.floor(Math.random() * bgcolors.length);
-  document.body.style.background = bgcolors[col];  
+  var col = rndCol(bgcolors);
+  document.body.style.background = col;  
 }

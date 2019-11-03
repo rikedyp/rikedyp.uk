@@ -12,17 +12,45 @@
     <meta charset="UTF-8" />
     <link rel="stylesheet" type="text/css" href="rikedyp/style.css" />
     <link rel="stylesheet" href="flickity/flickity.css" media="screen">
+    <script src="APLPhys/posQ0.js"></script>
+    <script src="APLPhys/posQ1.js"></script>
+    <script src="APLPhys/posQ2.js"></script>
+    <script src="APLPhys/posQ3.js"></script>
+    <script src="APLPhys/posQ4.js"></script>
+    <script src="APLPhys/render.js"></script>
     <script src="rikedyp/script.js"></script>
     <script src="flickity/flickity.pkgd.js"></script>
-    <script src="APLPhys/jquery.min.js"></script>
-    <script src="APLPhys/aplphys.js"></script>
-    <script src="APLPhys/babylon.js"></script>
+    
   </head>
   <body>
     <div class="h0 center">RikedyP.uk</div>
     <h3 class="center">RikedyPortfolio</h3>    
     
+    <br /><br />
     <hr />
+    <br /><br />
+            
+    <div class="ap-carousel" data-flickity='{ "cellAlign": "left", "contain": true, "wrapAround": true, "accessibility": true}'>
+      <div class="carousel-cell">
+        <canvas id="vp0" class="viewport"></canvas>
+      </div>
+      <div class="carousel-cell">
+        <canvas id="vp1" class="viewport"></canvas>
+      </div>
+      <div class="carousel-cell">
+        <canvas id="vp2" class="viewport"></canvas>
+      </div>
+      <div class="carousel-cell">
+        <canvas id="vp3" class="viewport"></canvas>
+      </div>
+      <div class="carousel-cell">
+        <canvas id="vp4" class="viewport"></canvas>
+      </div>
+    </div>
+    
+    <br /><br />
+    <hr />
+    <br /><br />
     
     <div class="main-carousel" data-flickity='{ "cellAlign": "left", "contain": true, "wrapAround": true, "accessibility": true}'>
       <div class="carousel-cell">
@@ -41,6 +69,8 @@
         <!-- <img class="slide" src="img/bridge.jpg" /> -->
       <!-- </div>  -->
     </div>
+    
+    <br /><br />
     <hr />
     
     <div id="iconPanel">

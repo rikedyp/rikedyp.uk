@@ -1,0 +1,45 @@
+⍝ GranNewtonsCradle.aplphys
+⍝ Demo APLPhys script
+⍝ Simulation parameters
+ periodic←2
+ ∆t←0.0032
+⍝ GranularHooke
+ kn←1
+ gn←0
+
+ CreateBox 1 1 1
+
+⍝ Small particles
+ natoms←×/lattice←12 1 1⍝10 8 4
+ pos⍪←↑,0.1×⍳lattice
+ pos+⍤1←.30 0 0
+ vel⍪←natoms dim⍴0
+⍝ vel[12;]←.3 0 0
+ acc⍪←natoms dim⍴0
+ mass←1
+ radii←0.08
+ groups,←natoms
+ fixgroups,←0
+
+⍝ Big particle
+ pos⍪←.2 .1 .1
+ vel⍪←.0 0 0
+ acc⍪←3⍴0
+ mass,←3
+ radii,←0.15
+ groups,←1
+ fixgroups,←0
+
+ pos+⍤1←0.5 0 0
+
+ natoms←≢pos
+ density←volume÷⍨mass×.×groups
+ mass←groups/mass
+ rcutoff←groups/radii
+
+
+ ComputeForces←(kn gn mass rcutoff)∘GranularHooke
+ Thermostat←{⍵}
+ RunStyle←Verlet
+
+ dumpfreq←50
