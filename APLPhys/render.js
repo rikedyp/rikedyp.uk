@@ -28,10 +28,7 @@ function nextFrame() {
     playFrames[i] += pbmult;
   }
   RenderCanvas(0, "vp0", posQ0);   
-  RenderCanvas(1, "vp1", posQ1);  
-  RenderCanvas(2, "vp2", posQ2);  
-  RenderCanvas(3, "vp3", posQ3);  
-  RenderCanvas(4, "vp4", posQ4);  
+  RenderCanvas(1, "vp1", posQ1);   
   timer = setTimeout("nextFrame()", 17);
 }
 
