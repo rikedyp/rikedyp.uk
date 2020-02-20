@@ -17,7 +17,7 @@ div.output_area {
     width: 100%;
 }
 div.output_subarea {
-    overflow-x: hidden;
+    overflow-x: visible;
 }
 }
 div.text_cell.rendered .rendered_html{
