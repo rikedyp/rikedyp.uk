@@ -12747,8 +12747,7 @@ a.anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Audience">Audience<a class="anchor-link" href="#Audience">&#182;</a></h2><p>This discussion is aimed at users.</p>
-<p><a href="https://aplwiki.com/wiki/Performance">https://aplwiki.com/wiki/Performance</a> has links to media related to performant implementation.</p>
+<h2 id="Audience">Audience<a class="anchor-link" href="#Audience">&#182;</a></h2><p>APLers</p>
 
 </div>
 </div>
@@ -12862,17 +12861,6 @@ a.anchor-link {
 </div>
 
 </div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Code-analysis-tools">Code analysis tools<a class="anchor-link" href="#Code-analysis-tools">&#182;</a></h3><div class="highlight"><pre><span></span><span class="nf">⎕PROFILE</span>   <span class="sr">]</span><span class="nv">Profile</span>
-<span class="nv">dfns</span><span class="na">.</span><span class="nv">cmpx</span>  <span class="sr">]</span><span class="nv">Runtime</span>
-</pre></div>
-
-</div>
-</div>
-</div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[3]:</div>
@@ -12897,8 +12885,8 @@ a.anchor-link {
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <span style="white-space:pre; font-family: monospace">                                                                        
-  lifeFlat R   → 1.1E¯5 |   0% ⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕          
-  lifeNested R → 1.4E¯5 | +29% ⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕ 
+  lifeFlat R   → 1.1E¯5 |   0% ⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕         
+  lifeNested R → 1.4E¯5 | +26% ⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕ 
 </span>
 </div>
 
@@ -12912,8 +12900,19 @@ a.anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>$${(\sum_{n=1}^{N}A_n})\div{N}$$
-$$\sum_{n=1}^{N}({A_n}\div{N})$$</p>
+<h3 id="Code-analysis-tools">Code analysis tools<a class="anchor-link" href="#Code-analysis-tools">&#182;</a></h3><div class="highlight"><pre><span></span><span class="nf">⎕PROFILE</span>   <span class="sr">]</span><span class="nv">Profile</span>
+<span class="nv">dfns</span><span class="na">.</span><span class="nv">cmpx</span>  <span class="sr">]</span><span class="nv">Runtime</span>
+</pre></div>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>$${(\sum_{n=1}^{N}A_n})\div{N}$$</p>
+<p>$$\sum_{n=1}^{N}({A_n}\div{N})$$</p>
 
 </div>
 </div>
@@ -13010,8 +13009,8 @@ $$\sum_{n=1}^{N}({A_n}\div{N})$$</p>
 
 
 <div class="output_html rendered_html output_subarea output_execute_result">
-<span style="white-space:pre; font-family: monospace">  avg1 n → 2.3E¯6 |   0% ⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕                   
-  avg2 n → 4.3E¯6 | +88% ⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕
+<span style="white-space:pre; font-family: monospace">  avg1 n → 2.1E¯6 |   0% ⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕                    
+  avg2 n → 4.2E¯6 | +96% ⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕
 </span>
 </div>
 
@@ -13026,10 +13025,11 @@ $$\sum_{n=1}^{N}({A_n}\div{N})$$</p>
 <div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-APL"><pre><span></span><span class="nf">⎕PROFILE</span> <span class="s1">&#39;start&#39;</span>
+<div class=" highlight hl-APL"><pre><span></span><span class="nf">⎕PROFILE</span> <span class="s1">&#39;clear&#39;</span>
+<span class="nf">⎕PROFILE</span> <span class="s1">&#39;start&#39;</span>
 <span class="nv">avg1</span> <span class="nv">n</span>
 <span class="nf">⎕PROFILE</span> <span class="s1">&#39;stop&#39;</span>
-<span class="sr">]</span><span class="nv">Profile</span>
+<span class="sr">]</span><span class="nv">Profile</span> <span class="o">-</span><span class="nv">lines</span>
 </pre></div>
 
 </div>
@@ -13060,12 +13060,29 @@ $$\sum_{n=1}^{N}({A_n}\div{N})$$</p>
 
 
 <div class="output_html rendered_html output_subarea output_execute_result">
-<span style="white-space:pre; font-family: monospace"> Total time: 0.5 msec                          
-                                               
-  Element                 msec       %  Calls  
-  ⎕SE.Dyalog.Out.Filter    1.2   218.2      6  
-  ⎕SE.Dyalog.Out.Box       0.1    19.9      5  
-  #.avg1                   0.0     1.9      1  
+<span style="white-space:pre; font-family: monospace"> Total time: 0.4 msec                             
+                                                  
+  Element                     msec      %  Calls  
+  ⎕SE.Dyalog.Out.Filter[6]     0.3   74.9      2  
+  ⎕SE.Dyalog.Out.Filter[32]    0.2   65.1      1  
+  ⎕SE.Dyalog.Out.Filter[18]    0.1   18.3      2  
+  ⎕SE.Dyalog.Out.Filter[19]    0.1   18.3      1  
+  ⎕SE.Dyalog.Out.Filter[3]     0.1   14.8      1  
+  ⎕SE.Dyalog.Out.Box[90]       0.0    7.4      1  
+  ⎕SE.Dyalog.Out.Filter[5]     0.0    4.8      2  
+  ⎕SE.Dyalog.Out.Filter[1]     0.0    2.4      1  
+  ⎕SE.Dyalog.Out.Box[74]       0.0    2.4      2  
+  ⎕SE.Dyalog.Out.Box[88]       0.0    2.1      1  
+  ⎕SE.Dyalog.Out.Filter[9]     0.0    1.9      1  
+  ⎕SE.Dyalog.Out.Filter[8]     0.0    1.6      1  
+  ⎕SE.Dyalog.Out.Filter[10]    0.0    1.6      1  
+  #.avg1[2]                    0.0    1.3      1  
+  ⎕SE.Dyalog.Out.Filter[2]     0.0    1.3      1  
+  ⎕SE.Dyalog.Out.Filter[7]     0.0    1.3      1  
+  ⎕SE.Dyalog.Out.Filter[11]    0.0    1.3      2  
+  ⎕SE.Dyalog.Out.Box[4]        0.0    1.3      2  
+  #.avg1[1]                    0.0    0.8      1  
+  ⎕SE.Dyalog.Out.Box[3]        0.0    0.8      1  
 </span>
 </div>
 
@@ -13132,13 +13149,13 @@ $$\sum_{n=1}^{N}({A_n}\div{N})$$</p>
 
 
 <div class="output_html rendered_html output_subarea output_execute_result">
-<span style="white-space:pre; font-family: monospace"> Total time: 20.8 msec              
+<span style="white-space:pre; font-family: monospace"> Total time: 20.2 msec              
                                     
   Element      msec      %   Calls  
-  #.avg1[2]    10.7   51.6   10000  
-  #.avg1[1]     4.8   23.3   10000  
-  #.avg1[3]     3.3   16.1   10000  
-  #.avg1[0]     1.3    6.5   10000  
+  #.avg1[2]    10.8   53.4   10000  
+  #.avg1[1]     4.6   22.8   10000  
+  #.avg1[3]     3.1   15.5   10000  
+  #.avg1[0]     1.2    5.8   10000  
 </span>
 </div>
 
@@ -13191,13 +13208,13 @@ $$\sum_{n=1}^{N}({A_n}\div{N})$$</p>
 
 
 <div class="output_html rendered_html output_subarea output_execute_result">
-<span style="white-space:pre; font-family: monospace"> Total time: 43.6 msec              
+<span style="white-space:pre; font-family: monospace"> Total time: 42.6 msec              
                                     
   Element      msec      %   Calls  
-  #.avg2[2]    18.8   43.1   10000  
-  #.avg2[3]    18.3   42.0   10000  
-  #.avg2[1]     4.7   10.8   10000  
-  #.avg2[0]     1.3    2.9   10000  
+  #.avg2[3]    18.1   42.4   10000  
+  #.avg2[2]    17.8   41.7   10000  
+  #.avg2[1]     4.9   11.5   10000  
+  #.avg2[0]     1.2    2.8   10000  
 </span>
 </div>
 
@@ -13398,7 +13415,7 @@ IJKL
 <div class="output_html rendered_html output_subarea output_execute_result">
 <span style="white-space:pre; font-family: monospace">                                                                               
   0.5*⍨+/2*⍨-⍤1⍤1 99⍨posFlat → 7.7E¯3 |     0% ⎕⎕⎕                             
-  0.5*⍨+/¨2*⍨∘.-⍨posNest     → 1.2E¯1 | +1429% ⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕
+  0.5*⍨+/¨2*⍨∘.-⍨posNest     → 1.2E¯1 | +1413% ⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕
 
                
                
@@ -13458,7 +13475,7 @@ IJKL
 <div class="output_html rendered_html output_subarea output_execute_result">
 <span style="white-space:pre; font-family: monospace">                                                                               
   +/,3&lt;{+/,⍵}⌺3 3⊢b → 3.1E¯5 |       0%                                        
-  +/,{3&lt;+/,⍵}⌺3 3⊢b → 3.8E¯2 | +120550% ⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕
+  +/,{3&lt;+/,⍵}⌺3 3⊢b → 3.7E¯2 | +119750% ⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕
 
         
         
@@ -13506,8 +13523,8 @@ IJKL
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <span style="white-space:pre; font-family: monospace">                                                                     
-  {≢⍵}⌸A  → 1.0E¯5 |     0% ⎕⎕                                       
-  {≢⊢⍵}⌸A → 1.8E¯4 | +1628% ⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕ 
+  {≢⍵}⌸A  → 9.9E¯6 |     0% ⎕⎕                                       
+  {≢⊢⍵}⌸A → 1.7E¯4 | +1656% ⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕ 
 </span>
 </div>
 
@@ -13553,7 +13570,7 @@ IJKL
 <div class="output_html rendered_html output_subarea output_execute_result">
 <span style="white-space:pre; font-family: monospace">                                                                       
   {(⊂⍋⍵)⌷⍵}A → 8.9E¯6 |    0% ⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕                          
-  {⍵⌷⍨⊂⍋⍵}A  → 2.3E¯5 | +161% ⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕ 
+  {⍵⌷⍨⊂⍋⍵}A  → 2.3E¯5 | +163% ⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕ 
 </span>
 </div>
 
@@ -13578,6 +13595,19 @@ IJKL
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Algorithms-and-Primitive-Complexity">Algorithms and Primitive Complexity<a class="anchor-link" href="#Algorithms-and-Primitive-Complexity">&#182;</a></h2><p>Hsu, A.W., 2019. A data parallel compiler hosted on the GPU.</p>
 <p>APL makes it easy to reason about algorithms.</p>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><a href="https://en.wikipedia.org/wiki/Computational_complexity_of_mathematical_operations">https://en.wikipedia.org/wiki/Computational_complexity_of_mathematical_operations</a></p>
+<div class="highlight"><pre><span></span><span class="o">+</span>     <span class="c1">⍝ O(n)</span>
+      <span class="o">|</span>     <span class="c1">⍝ O(n)</span>
+      <span class="na">∘.</span><span class="nv">f</span>   <span class="c1">⍝ O(n*2)</span>
+</pre></div>
 
 </div>
 </div>
@@ -13813,25 +13843,25 @@ IJKL
 <desc>Points follow ...</desc>
 <desc>Line</desc>
  <g stroke-width="3" stroke="Navy" stroke-linejoin="round" stroke-linecap="round" fill="none" >
-  <path d="M4100 460L3323 1299 2731 1751 2250 2074 1843 2262 1547 2378 1325 2449 1103 2494 955 2526 844 2546 770 2552 659 2565 622 2565 585 2571 511 2578" />
+  <path d="M4100 460L3323 1235 2731 1751 2250 2074 1843 2255 1547 2371 1325 2442 1103 2494 955 2526 844 2546 770 2552 659 2565 622 2565 585 2571 511 2578" />
  </g>
 <desc>Start of Line Chart ===========</desc>
 <desc>Points follow ...</desc>
 <desc>Line</desc>
  <g stroke-width="3" stroke="Maroon" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="9 12" fill="none" >
-  <path d="M4100 1558L3323 1881 2731 2152 2250 2287 1843 2397 1547 2462 1325 2500 1103 2546 955 2559 844 2578 770 2584 659 2597 622 2597 585 2604 511 2610" />
+  <path d="M4100 1558L3323 1945 2731 2158 2250 2294 1843 2404 1547 2468 1325 2507 1103 2546 955 2559 844 2578 770 2584 659 2597 622 2604 585 2604 511 2610" />
  </g>
 <desc>Start of Line Chart ===========</desc>
 <desc>Points follow ...</desc>
 <desc>Line</desc>
  <g stroke-width="3" stroke="Teal" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="0.3 5.7" fill="none" >
-  <path d="M4100 1622L3323 1622 2731 1558 2250 1558 1843 1816 1547 1816 1325 1816 1103 2010 955 2010 844 2010 770 2010 659 2236 622 2249 585 2236 511 2462" />
+  <path d="M4100 1622L3323 1622 2731 1558 2250 1558 1843 1816 1547 1816 1325 1816 1103 2010 955 2010 844 2010 770 2010 659 2236 622 2249 585 2242 511 2462" />
  </g>
 <desc>Start of Line Chart ===========</desc>
 <desc>Points follow ...</desc>
 <desc>Clipped Line</desc>
  <g stroke-width="3" stroke="Green" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="9 6.45 0.3 6.45" fill="none" >
-  <path d="M2831 40L2731 73 2250 73 1843 460 1547 460 1325 460 1103 460 955 395 844 460 770 460 659 460 622 460 585 331 511 460" />
+  <path d="M2221 40L1843 460 1547 460 1325 460 1103 395 955 460 844 460 770 460 659 460 622 460 585 460 511 460M2831 40L2731 73 2488 40" />
  </g>
 <desc>Key =====</desc>
 <desc>Key - Line</desc>
@@ -13959,25 +13989,25 @@ IJKL
 <desc>Points follow ...</desc>
 <desc>Line</desc>
  <g stroke-width="3" stroke="Navy" stroke-linejoin="round" stroke-linecap="round" fill="none" >
-  <path d="M4082 460L3323 1316 2713 1864 2250 2155 1862 2349 1566 2478 1325 2559 1122 2605 974 2631 863 2651 752 2664 678 2672 622 2676" />
+  <path d="M4082 460L3323 1316 2713 1864 2250 2155 1862 2349 1566 2478 1325 2559 1122 2605 974 2633 863 2651 752 2664 678 2672 622 2676" />
  </g>
 <desc>Start of Line Chart ===========</desc>
 <desc>Points follow ...</desc>
 <desc>Clipped Line</desc>
  <g stroke-width="3" stroke="Maroon" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="9 12" fill="none" >
-  <path d="M2824 40L2713 2300 2250 2429 1862 2510 1566 2576 1325 2613 1122 2639 974 2657 863 2667 752 2675 678 2680 622 2684" />
+  <path d="M2824 40L2713 2284 2250 2429 1862 2526 1566 2580 1325 2613 1122 2639 974 2659 863 2667 752 2676 678 2676 622 2683" />
  </g>
 <desc>Start of Line Chart ===========</desc>
 <desc>Points follow ...</desc>
 <desc>Line</desc>
  <g stroke-width="3" stroke="Teal" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="0.3 5.7" fill="none" >
-  <path d="M4082 2316L3323 2365 2713 2381 2250 2429 1862 2446 1566 2429 1325 2429 1122 2494 974 2494 863 2494 752 2542 678 2542 622 2542" />
+  <path d="M4082 2284L3323 2349 2713 2381 2250 2429 1862 2446 1566 2429 1325 2429 1122 2494 974 2478 863 2494 752 2542 678 2542 622 2542" />
  </g>
 <desc>Start of Line Chart ===========</desc>
 <desc>Points follow ...</desc>
 <desc>Line</desc>
  <g stroke-width="3" stroke="Green" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="9 6.45 0.3 6.45" fill="none" >
-  <path d="M4082 1768L3323 1913 2713 1881 2250 2026 1862 2026 1566 2058 1325 2058 1122 2155 974 2155 863 2171 752 2139 678 2155 622 2155" />
+  <path d="M4082 1800L3323 1913 2713 1913 2250 2026 1862 2026 1566 2058 1325 2058 1122 2155 974 2155 863 2155 752 2155 678 2123 622 2155" />
  </g>
 <desc>Key =====</desc>
 <desc>Key - Line</desc>
