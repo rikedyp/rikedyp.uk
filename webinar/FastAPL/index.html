@@ -12738,24 +12738,7 @@ a.anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Fast-APL">Fast APL<a class="anchor-link" href="#Fast-APL">&#182;</a></h1>
-</div>
-</div>
-</div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>An overview of topics related to writing performant code and optimising existing code.</p>
-
-</div>
-</div>
-</div></div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Audience">Audience<a class="anchor-link" href="#Audience">&#182;</a></h2><p>This discussion is aimed at users. For a selection of media discussing the performance-related aspects of implementing APL: <a href="https://rikedyp.uk/webinar/FastAPL/implementation.html">rikedyp.uk/webinar/FastAPL/implementation/</a></p>
+<h1 id="Fast-APL">Fast APL<a class="anchor-link" href="#Fast-APL">&#182;</a></h1><p>An overview of topics related to writing performant code and optimising existing code.</p>
 
 </div>
 </div>
@@ -12764,67 +12747,74 @@ a.anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Goals-for-code">Goals for code<a class="anchor-link" href="#Goals-for-code">&#182;</a></h2>
+<h2 id="Audience">Audience<a class="anchor-link" href="#Audience">&#182;</a></h2><p>This discussion is aimed at users.</p>
+<p><a href="https://aplwiki.com/wiki/Performance">https://aplwiki.com/wiki/Performance</a> has links to media related to performant implementation.</p>
+
 </div>
 </div>
-</div><div class="fragment">
+</div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>In APL, the ability to express similar ideas (or even the exact same idea) in multiple ways is quite pronounced.</p>
+<h2 id="Goals-for-code">Goals for code<a class="anchor-link" href="#Goals-for-code">&#182;</a></h2><p>In APL, the ability to express similar ideas (or even the exact same idea) in multiple ways is quite pronounced.</p>
 <p>This double-edged sword of language is both one of the most enjoyable parts of writing (choosing an expression which suits oneself), but it is also a source of frustration ("How can I express that better?" "What is a better way to put that?" "What is the best way to express this idea?").</p>
 
 </div>
 </div>
-</div></div></section><section>
+</div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="&quot;Better-code&quot;">"<em>Better code</em>"<a class="anchor-link" href="#&quot;Better-code&quot;">&#182;</a></h3><p>Aaron Hsu - "How much (money) are you willing to bet on this code?"</p>
-<p>Roger Hui - "Monument quality code"</p>
-<table align=left>
-<tr><td>☑ Accurate</td><td>☑ Reliabile</td></tr>
-</table>
+<h3 id="&quot;Better-code&quot;">"<em>Better code</em>"<a class="anchor-link" href="#&quot;Better-code&quot;">&#182;</a></h3><ul>
+<li><strong>Aaron Hsu:</strong> <em>How much (money) are you willing to bet on this code?</em></li>
+<li><strong>Roger Hui:</strong> <em>Monument quality code</em></li>
+</ul>
+<hr>
+<ul>
+<li><strong>Accurate</strong></li>
+<li><strong>Reliable</strong></li>
+</ul>
+
 </div>
 </div>
-</div></section><section>
+</div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Variables">Variables<a class="anchor-link" href="#Variables">&#182;</a></h3><p><a href="https://youtu.be/3FjYly2G_QI?t=315">Dyalog Webinars: APL CodeGolf Autumn Tournament</a></p>
-<table align=left>
-<tr><td>☐ Readable</td><td>Can a stranger understand it?</td></tr>
-<tr><td>☐ Fast</td><td>Does it perform in reasonable time using reasonable resources?</td></tr>
-<tr><td>☐ Short</td><td>APLers need not be convinced</td></tr>
-<tr><td colspan=2>☐ Balanced</td></tr>
-</table>
-</div>
-</div>
-</div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Variables">Variables<a class="anchor-link" href="#Variables">&#182;</a></h3><p>Reference: <a href="https://youtu.be/3FjYly2G_QI?t=315">Dyalog Webinars: APL CodeGolf Autumn Tournament</a></p>
+<ul>
+<li><strong>Accurate</strong></li>
+<li><strong>Reliable</strong></li>
+</ul>
+<hr>
+<ul>
+<li><strong>Readable:</strong> Can a stranger understand it?</li>
+<li><strong>Fast:</strong> Does it perform in reasonable time using reasonable resources?</li>
+<li><strong>Short:</strong> APLers need not be convinced</li>
+<li><strong>Balanced</strong></li>
+</ul>
 <p>Here we advocate for balanced code, as this is desirable in production.</p>
 
 </div>
 </div>
-</div></div></section></section><section><section>
+</div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Fast-APL">Fast APL<a class="anchor-link" href="#Fast-APL">&#182;</a></h2><p>In order of urgency from "first line of defence" to "last resort". Generally for changes to existing code, but also worth considering when trying to write performant code first time.</p>
-<ul>
-<li><a href="#Analysis-and-profiling">Analysis and profiling</a></li>
-<li><a href="">Mechanical sympathy</a></li>
-<li><a href="">Algorithms and primitive complexity</a></li>
-<li><a href="">The interpretive advantage</a></li>
-<li><a href="">Compilation</a></li>
-<li><a href="http://help.dyalog.com/latest/#Language/System%20Functions/na.htm?Highlight=%E2%8E%95NA">Outsourcing</a></li>
+<h2 id="Fast-APL">Fast APL<a class="anchor-link" href="#Fast-APL">&#182;</a></h2><ul>
+<li>Analysis and profiling</li>
+<li>Mitigating hotspots through <ul>
+<li>Implementing mechanical sympathy</li>
+<li>Using special cased code (The Interpretive Advantage)</li>
+<li>Compiling chunks</li>
+<li>Outsourcing jobs</li>
+</ul>
+</li>
+<li>Algorithms and primitive complexity</li>
 </ul>
 
 </div>
@@ -12837,39 +12827,34 @@ a.anchor-link {
 <h2 id="Analysis-and-profiling">Analysis and profiling<a class="anchor-link" href="#Analysis-and-profiling">&#182;</a></h2>
 </div>
 </div>
-</div></section><section>
+</div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Rule-#0:">Rule #0:<a class="anchor-link" href="#Rule-#0:">&#182;</a></h3><p>Do NOT optimise code which has NOT been measured as SLOW in realistic situations.</p>
-<ul>
-<li>Optimised code is often longer and much less readable</li>
-</ul>
+<h3 id="Rule-&#9109;IO">Rule <code>&#9109;IO</code><a class="anchor-link" href="#Rule-&#9109;IO">&#182;</a></h3><p>Do <strong>not</strong> optimise code which has <strong>not</strong> been measured as <strong>slow</strong> in realistic situations.</p>
+<p>Optimised code is often longer and much less readable.</p>
 
 </div>
 </div>
-</div></section><section>
+</div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<div class="highlight"><pre><span></span><span class="nf">⎕PROFILE</span>
-      <span class="sr">]</span><span class="nv">Profile</span>  
-      <span class="sr">]</span><span class="nv">Runtime</span>
-      <span class="nv">dfns</span><span class="na">.</span><span class="nv">cmpx</span>
-</pre></div>
+<p><code>dfns.life</code></p>
 
 </div>
 </div>
-</div></section><section>
+</div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[88]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-APL"><pre><span></span><span class="sr">]</span><span class="nv">box</span> <span class="nv">off</span>
-<span class="sr">]</span><span class="nv">rows</span> <span class="nv">off</span>
+<div class=" highlight hl-APL"><pre><span></span><span class="nv">R</span><span class="kd">←</span><span class="m">¯2</span><span class="o">⌽</span><span class="m">¯1</span><span class="o">⊖</span><span class="m">5</span> <span class="m">7</span><span class="o">↑</span><span class="p">(</span><span class="m">3</span> <span class="m">3</span><span class="o">⍴⍳</span><span class="m">9</span><span class="p">)</span><span class="o">∊</span><span class="m">2</span> <span class="m">3</span> <span class="m">4</span> <span class="m">5</span> <span class="m">8</span>
+<span class="nv">lifeNested</span><span class="kd">←</span><span class="kt">{</span><span class="o">↑</span><span class="m">1</span> <span class="bp">⍵</span><span class="o">∨</span><span class="na">.</span><span class="o">∧</span><span class="m">3</span> <span class="m">4</span><span class="o">=+</span><span class="na">/</span><span class="o">,</span><span class="m">¯1</span> <span class="m">0</span> <span class="m">1</span><span class="na">∘.</span><span class="o">⌽</span><span class="m">¯1</span> <span class="m">0</span> <span class="m">1</span><span class="na">∘.</span><span class="o">⊖⊂</span><span class="bp">⍵</span><span class="kt">}</span>
+<span class="nv">lifeFlat</span><span class="kd">←</span><span class="kt">{</span><span class="p">(</span><span class="m">3</span><span class="o">=</span><span class="nv">c</span><span class="p">)</span><span class="o">∨</span><span class="bp">⍵</span><span class="o">∧</span><span class="m">4</span><span class="o">=</span><span class="nv">c</span><span class="kd">←</span><span class="o">+</span><span class="na">⌿</span><span class="o">,</span><span class="sr">[</span><span class="m">1</span> <span class="m">2</span><span class="sr">]</span><span class="m">¯1</span> <span class="m">0</span> <span class="m">1</span><span class="o">⊖</span><span class="na">⍤</span><span class="m">0</span> <span class="m">99</span><span class="na">⍤</span><span class="m">99</span> <span class="m">2</span><span class="o">⊢</span><span class="m">¯1</span> <span class="m">0</span> <span class="m">1</span><span class="o">⌽</span><span class="na">⍤</span><span class="m">0</span> <span class="m">99</span><span class="o">⊢</span><span class="bp">⍵</span><span class="kt">}</span>
 </pre></div>
 
 </div>
@@ -12882,25 +12867,65 @@ a.anchor-link {
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[88]:</div>
+<div class="prompt output_prompt">Out[1]:</div>
 
 
 
 <div class="output_html rendered_html output_subarea output_execute_result">
-<span style="white-space:pre; font-family: monospace">Was ON
+<span style="white-space:pre; font-family: monospace">done
+    _⍸   
+___( ∘)&gt;  ∘○O( ⊃∨∧⌊○⊂ 2020-02-20 07:20:26 )
+\ ≤_. )  
+ `---´   
+
+
+Rebuilding user command cache... done
 </span>
 </div>
 
 </div>
+
+</div>
+</div>
+
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Code-analysis-tools">Code analysis tools<a class="anchor-link" href="#Code-analysis-tools">&#182;</a></h3><div class="highlight"><pre><span></span><span class="nf">⎕PROFILE</span>   <span class="sr">]</span><span class="nv">Profile</span>
+<span class="nv">dfns</span><span class="na">.</span><span class="nv">cmpx</span>  <span class="sr">]</span><span class="nv">Runtime</span>
+</pre></div>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-APL"><pre><span></span><span class="sr">]</span><span class="nv">runtime</span> <span class="o">-</span><span class="nv">c</span> <span class="s2">&quot;lifeNested R&quot;</span> <span class="s2">&quot;lifeFlat R&quot;</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[88]:</div>
+<div class="prompt output_prompt">Out[2]:</div>
 
 
 
 <div class="output_html rendered_html output_subarea output_execute_result">
-<span style="white-space:pre; font-family: monospace">Was OFF
+<span style="white-space:pre; font-family: monospace">                                                                        
+  lifeNested R → 1.5E¯5 |   0% ⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕ 
+  lifeFlat R   → 1.1E¯5 | -23% ⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕          
 </span>
 </div>
 
@@ -12909,17 +12934,27 @@ a.anchor-link {
 </div>
 </div>
 
-</div></section><section>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>$${(\sum_{n=1}^{N}A_n})\div{N}$$
+$$\sum_{n=1}^{N}({A_n}\div{N})$$</p>
+
+</div>
+</div>
+</div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[71]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-APL"><pre><span></span><span class="sr">]</span><span class="nv">dinput</span>
 <span class="nv">avg1</span><span class="kd">←</span><span class="kt">{</span>
-<span class="nv">c</span><span class="kd">←</span><span class="o">≢</span><span class="bp">⍵</span>
-<span class="nv">n</span><span class="kd">←</span><span class="bp">⍵</span><span class="o">÷</span><span class="nv">c</span>
-<span class="o">+</span><span class="na">⌿</span><span class="nv">n</span>
+  <span class="nv">c</span><span class="kd">←</span><span class="o">≢</span><span class="bp">⍵</span>    <span class="c1">⍝ Count elements </span>
+  <span class="nv">n</span><span class="kd">←</span><span class="bp">⍵</span><span class="o">÷</span><span class="nv">c</span>   <span class="c1">⍝ Array divided by count</span>
+  <span class="o">+</span><span class="na">⌿</span><span class="nv">n</span>     <span class="c1">⍝ Sum</span>
 <span class="kt">}</span>
 </pre></div>
 
@@ -12927,17 +12962,17 @@ a.anchor-link {
 </div>
 </div>
 
-</div><div class="fragment">
+</div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[72]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-APL"><pre><span></span><span class="sr">]</span><span class="nv">dinput</span>
 <span class="nv">avg2</span><span class="kd">←</span><span class="kt">{</span>
-<span class="nv">c</span><span class="kd">←</span><span class="o">≢</span><span class="bp">⍵</span>
-<span class="nv">s</span><span class="kd">←</span><span class="o">+</span><span class="na">⌿</span><span class="bp">⍵</span>
-<span class="nv">s</span><span class="o">÷</span><span class="nv">c</span>
+  <span class="nv">c</span><span class="kd">←</span><span class="o">≢</span><span class="bp">⍵</span>    <span class="c1">⍝ Count elements</span>
+  <span class="nv">s</span><span class="kd">←</span><span class="o">+</span><span class="na">⌿</span><span class="bp">⍵</span>   <span class="c1">⍝ Sum elements </span>
+  <span class="nv">s</span><span class="o">÷</span><span class="nv">c</span>     <span class="c1">⍝ Sum divided by count</span>
 <span class="kt">}</span>
 </pre></div>
 
@@ -12945,10 +12980,10 @@ a.anchor-link {
 </div>
 </div>
 
-</div></div></section><section>
+</div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[73]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-APL"><pre><span></span><span class="p">)</span><span class="nv">copy</span> <span class="nv">dfns</span> <span class="nv">cmpx</span>
@@ -12966,7 +13001,7 @@ a.anchor-link {
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[73]:</div>
+<div class="prompt output_prompt">Out[5]:</div>
 
 
 
@@ -12979,13 +13014,13 @@ a.anchor-link {
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[73]:</div>
+<div class="prompt output_prompt">Out[5]:</div>
 
 
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <span style="white-space:pre; font-family: monospace">  avg1 n → 4.2E¯6 |   0% ⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕
-  avg2 n → 2.1E¯6 | -51% ⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕                    
+  avg2 n → 2.3E¯6 | -47% ⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕                   
 </span>
 </div>
 
@@ -12994,15 +13029,125 @@ a.anchor-link {
 </div>
 </div>
 
-</div></section><section>
+</div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[93]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-APL"><pre><span></span><span class="sr">]</span><span class="nv">runtime</span> <span class="o">-?</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[6]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<span style="white-space:pre; font-family: monospace">───────────────────────────────────────────────────────────────────────────────
+                                                                               
+]PERFORMANCE.RunTime                                                           
+                                                                               
+Report execution time of one or more expressions                               
+    ]RunTime [&lt;expression&gt; [&lt;expression&gt; ... [-compare]]]                      
+    [-details[=all|non|ai]] [-repeat=&lt;limit&gt;]                                  
+                                                                               
+]RunTime -??  ⍝ for more information                                           
+]RunTime -??? ⍝ for examples                                                   
+                                                                               
+</span>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></section></section><section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-APL"><pre><span></span><span class="nf">⎕PROFILE</span> <span class="s1">&#39;start&#39;</span>
+<span class="nv">avg1</span> <span class="nv">n</span>
+<span class="nf">⎕PROFILE</span> <span class="s1">&#39;stop&#39;</span>
+<span class="sr">]</span><span class="nv">Profile</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[7]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<span style="white-space:pre; font-family: monospace">500.5
+</span>
+</div>
+
+</div>
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[7]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<span style="white-space:pre; font-family: monospace"> Total time: 0.6 msec                          
+                                               
+  Element                 msec       %  Calls  
+  ⎕SE.Dyalog.Out.Filter    1.2   220.4      6  
+  ⎕SE.Dyalog.Out.Box       0.1    20.6      5  
+  #.avg1                   0.0     3.4      1  
+</span>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></section></section><section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-APL"><pre><span></span><span class="nv">repeat</span><span class="kd">←</span><span class="m">1e4</span>
-<span class="err">_</span><span class="nv">Profile</span><span class="kd">←</span><span class="kt">{</span><span class="bp">⍺</span><span class="kd">←</span><span class="m">1</span> <span class="p">⋄</span> <span class="err">_</span><span class="kd">←</span><span class="nf">⎕PROFILE</span><span class="s1">&#39;clear&#39;</span> <span class="p">⋄</span> <span class="err">_</span><span class="kd">←</span><span class="nf">⎕PROFILE</span> <span class="s1">&#39;start&#39;</span> <span class="p">⋄</span> <span class="nv">r</span><span class="kd">←</span><span class="bp">⍺⍺</span><span class="na">¨</span><span class="bp">⍺</span><span class="o">⍴⊂</span><span class="bp">⍵</span> <span class="p">⋄</span> <span class="err">_</span><span class="kd">←</span><span class="nf">⎕PROFILE</span> <span class="s1">&#39;stop&#39;</span> <span class="p">⋄</span> <span class="nv">f</span><span class="kd">←</span><span class="bp">⍺⍺</span> <span class="p">⋄</span> <span class="nf">⎕VR</span><span class="s1">&#39;f&#39;</span><span class="kt">}</span>
-<span class="nv">repeat</span> <span class="nv">avg1</span> <span class="err">_</span><span class="nv">Profile</span> <span class="nv">n</span>
+<span class="err">_</span><span class="nv">Profile</span><span class="kd">←</span><span class="kt">{</span><span class="bp">⍺</span><span class="kd">←</span><span class="m">1</span> <span class="p">⋄</span> <span class="err">_</span><span class="kd">←</span><span class="nf">⎕PROFILE</span><span class="s1">&#39;clear&#39;</span> <span class="p">⋄</span> <span class="err">_</span><span class="kd">←</span><span class="nf">⎕PROFILE</span> <span class="s1">&#39;start&#39;</span> <span class="p">⋄</span> <span class="nv">r</span><span class="kd">←</span><span class="bp">⍺⍺</span><span class="na">¨</span><span class="bp">⍺</span><span class="o">⍴⊂</span><span class="bp">⍵</span> <span class="p">⋄</span> <span class="err">_</span><span class="kd">←</span><span class="nf">⎕PROFILE</span> <span class="s1">&#39;stop&#39;</span><span class="kt">}</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div></section></section><section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-APL"><pre><span></span><span class="nv">repeat</span> <span class="nv">avg1</span> <span class="err">_</span><span class="nv">Profile</span> <span class="nv">n</span>
+<span class="nf">⎕VR</span><span class="s1">&#39;avg1&#39;</span>
 <span class="sr">]</span><span class="nv">profile</span> <span class="o">-</span><span class="nv">lines</span>
 </pre></div>
 
@@ -13016,17 +13161,17 @@ a.anchor-link {
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[93]:</div>
+<div class="prompt output_prompt">Out[9]:</div>
 
 
 
 <div class="output_html rendered_html output_subarea output_execute_result">
-<span style="white-space:pre; font-family: monospace">     ∇ f←{
-[1]        c←≢⍵
-[2]        n←⍵÷c
-[3]        +⌿n
-[4]    }
-     ∇
+<span style="white-space:pre; font-family: monospace">     ∇ avg1←{                              
+[1]        c←≢⍵    ⍝ Count elements        
+[2]        n←⍵÷c   ⍝ Array divided by count
+[3]        +⌿n     ⍝ Sum                   
+[4]    }                                   
+     ∇                                     
 </span>
 </div>
 
@@ -13034,18 +13179,18 @@ a.anchor-link {
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[93]:</div>
+<div class="prompt output_prompt">Out[9]:</div>
 
 
 
 <div class="output_html rendered_html output_subarea output_execute_result">
-<span style="white-space:pre; font-family: monospace"> Total time: 46.5 msec              
+<span style="white-space:pre; font-family: monospace"> Total time: 50.3 msec              
                                     
   Element      msec      %   Calls  
-  #.avg1[2]    19.6   42.0   10000  
-  #.avg1[3]    18.9   40.6   10000  
-  #.avg1[1]     5.3   11.4   10000  
-  #.avg1[0]     1.9    4.1   10000  
+  #.avg1[2]    21.4   42.5   10000  
+  #.avg1[3]    19.7   39.1   10000  
+  #.avg1[1]     5.8   11.5   10000  
+  #.avg1[0]     2.2    4.3   10000  
 </span>
 </div>
 
@@ -13054,13 +13199,14 @@ a.anchor-link {
 </div>
 </div>
 
-</div><div class="fragment">
+</div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[94]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-APL"><pre><span></span><span class="nv">repeat</span> <span class="nv">avg2</span> <span class="err">_</span><span class="nv">Profile</span> <span class="nv">n</span>
+<span class="nf">⎕VR</span><span class="s1">&#39;avg2&#39;</span>
 <span class="sr">]</span><span class="nv">profile</span> <span class="o">-</span><span class="nv">lines</span>
 </pre></div>
 
@@ -13074,17 +13220,17 @@ a.anchor-link {
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[94]:</div>
+<div class="prompt output_prompt">Out[10]:</div>
 
 
 
 <div class="output_html rendered_html output_subarea output_execute_result">
-<span style="white-space:pre; font-family: monospace">     ∇ f←{
-[1]        c←≢⍵
-[2]        s←+⌿⍵
-[3]        s÷c
-[4]    }
-     ∇
+<span style="white-space:pre; font-family: monospace">     ∇ avg2←{                            
+[1]        c←≢⍵    ⍝ Count elements      
+[2]        s←+⌿⍵   ⍝ Sum elements        
+[3]        s÷c     ⍝ Sum divided by count
+[4]    }                                 
+     ∇                                   
 </span>
 </div>
 
@@ -13092,18 +13238,18 @@ a.anchor-link {
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[94]:</div>
+<div class="prompt output_prompt">Out[10]:</div>
 
 
 
 <div class="output_html rendered_html output_subarea output_execute_result">
-<span style="white-space:pre; font-family: monospace"> Total time: 20.6 msec              
+<span style="white-space:pre; font-family: monospace"> Total time: 33.0 msec              
                                     
   Element      msec      %   Calls  
-  #.avg2[2]    10.8   52.3   10000  
-  #.avg2[1]     4.8   23.5   10000  
-  #.avg2[3]     3.0   14.5   10000  
-  #.avg2[0]     1.3    6.5   10000  
+  #.avg2[2]    14.9   45.0   10000  
+  #.avg2[1]     7.3   22.2   10000  
+  #.avg2[3]     5.1   15.4   10000  
+  #.avg2[0]     3.7   11.3   10000  
 </span>
 </div>
 
@@ -13112,15 +13258,997 @@ a.anchor-link {
 </div>
 </div>
 
-</div></div></section></section><section><section>
+</div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Mechanical-Sympathy">Mechanical Sympathy<a class="anchor-link" href="#Mechanical-Sympathy">&#182;</a></h2>
+<h2 id="Mechanical-Sympathy">Mechanical Sympathy<a class="anchor-link" href="#Mechanical-Sympathy">&#182;</a></h2><p><a href="https://www.youtube.com/watch?v=mK2WUDIY4hk">Dyalog '18: Rectangles All The Way Down</a></p>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Relatively easy gains</p>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Avoid nested arrays or mixed-type arrays</p>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-APL"><pre><span></span><span class="m">3</span> <span class="m">4</span><span class="o">⍴</span><span class="nf">⎕A</span> <span class="c1">⍝ (3 4)(A B C D E F G H I J K L)</span>
+</pre></div>
+
 </div>
 </div>
 </div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[11]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<span style="white-space:pre; font-family: monospace">ABCD
+EFGH
+IJKL
+</span>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></section></section><section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-APL"><pre><span></span><span class="c1">⍝ (2 3)(p0 p1 p2 p3 p4 p5)</span>
+<span class="c1">⍝ p → (2 2)(1 2 3 4)</span>
+<span class="c1">⍝ p → (5)(a b c d e)</span>
+<span class="c1">⍝ p → (2 3)(word)</span>
+<span class="c1">⍝ p → ()(1)</span>
+<span class="c1">⍝ p → ()(2)</span>
+<span class="c1">⍝ p → ()(3)</span>
+<span class="m">2</span> <span class="m">3</span><span class="o">⍴</span><span class="p">(</span><span class="m">2</span> <span class="m">2</span><span class="o">⍴⍳</span><span class="m">4</span><span class="p">)</span><span class="s1">&#39;abcde&#39;</span><span class="p">(</span><span class="m">2</span> <span class="m">3</span><span class="o">⍴⊂</span><span class="s1">&#39;word&#39;</span><span class="p">)</span><span class="m">1</span> <span class="m">2</span> <span class="m">3</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[12]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<span style="white-space:pre; font-family: monospace">┌───┬─────┬────────────────┐
+│1 2│abcde│┌────┬────┬────┐│
+│3 4│     ││word│word│word││
+│   │     │├────┼────┼────┤│
+│   │     ││word│word│word││
+│   │     │└────┴────┴────┘│
+├───┼─────┼────────────────┤
+│1  │2    │3               │
+└───┴─────┴────────────────┘
+</span>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></section></section><section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-APL"><pre><span></span><span class="vg">⎕</span><span class="kd">←</span><span class="m">5</span><span class="o">↑</span><span class="nv">posNest</span><span class="kd">←</span><span class="o">?</span><span class="m">500</span><span class="o">⍴⊂</span><span class="m">3</span><span class="o">⍴</span><span class="m">10</span>
+<span class="vg">⎕</span><span class="kd">←</span><span class="m">5</span><span class="o">↑</span><span class="nv">posFlat</span><span class="kd">←</span><span class="o">↑</span><span class="nv">posNest</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[13]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<span style="white-space:pre; font-family: monospace">┌──────┬─────┬─────┬─────┬─────┐
+│7 8 10│3 6 8│7 1 5│2 4 4│9 4 1│
+└──────┴─────┴─────┴─────┴─────┘
+</span>
+</div>
+
+</div>
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[13]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<span style="white-space:pre; font-family: monospace">7 8 10
+3 6  8
+7 1  5
+2 4  4
+9 4  1
+</span>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></section></section><section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-APL"><pre><span></span><span class="sr">]</span><span class="nv">runtime</span> <span class="o">-</span><span class="nv">c</span> <span class="s2">&quot;0.5*⍨+/¨2*⍨∘.-⍨posNest&quot;</span> <span class="s2">&quot;0.5*⍨+/2*⍨-⍤1⍤1 99⍨posFlat&quot;</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[14]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<span style="white-space:pre; font-family: monospace">                                                                               
+  0.5*⍨+/¨2*⍨∘.-⍨posNest     → 1.2E¯1 |   0% ⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕
+  0.5*⍨+/2*⍨-⍤1⍤1 99⍨posFlat → 7.8E¯3 | -94% ⎕⎕⎕                               
+
+             
+      ⎕⎕⎕⎕⎕⎕ 
+             
+</span>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Use inverted tables: <a href="">Dyalog '18: Inverted Tables</a></p>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-APL"><pre><span></span><span class="vg">⎕</span><span class="kd">←</span><span class="nv">creatures</span><span class="kd">←</span><span class="p">(</span><span class="o">↑</span><span class="s1">&#39;cats&#39;</span> <span class="s1">&#39;dogs&#39;</span> <span class="s1">&#39;ducks&#39;</span> <span class="s1">&#39;goats&#39;</span><span class="p">)(</span><span class="m">412</span> <span class="m">418</span> <span class="m">520</span> <span class="m">136</span><span class="p">)(</span><span class="o">↑</span><span class="s1">&#39;selfish&#39;</span> <span class="s1">&#39;loyal&#39;</span> <span class="s1">&#39;mischievous&#39;</span> <span class="s1">&#39;baa&#39;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[15]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<span style="white-space:pre; font-family: monospace">┌─────┬───────────────┬───────────┐
+│cats │412 418 520 136│selfish    │
+│dogs │               │loyal      │
+│ducks│               │mischievous│
+│goats│               │baa        │
+└─────┴───────────────┴───────────┘
+</span>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></section></section><section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-APL"><pre><span></span><span class="vg">⎕</span><span class="kd">←</span><span class="nv">good</span><span class="kd">←</span><span class="p">(</span><span class="o">↑</span><span class="s1">&#39;dogs&#39;</span> <span class="s1">&#39;goats&#39;</span><span class="p">)(</span><span class="m">418</span> <span class="m">136</span><span class="p">)(</span><span class="m">2</span> <span class="m">11</span><span class="o">⍴</span><span class="s1">&#39;loyal      baa        &#39;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[16]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<span style="white-space:pre; font-family: monospace">┌─────┬───────┬───────────┐
+│dogs │418 136│loyal      │
+│goats│       │baa        │
+└─────┴───────┴───────────┘
+</span>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></section></section><section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-APL"><pre><span></span><span class="nv">IIX</span> <span class="kd">←</span> <span class="m">8</span><span class="err">⌶</span> <span class="c1">⍝(Inverted-table IndeX of)</span>
+<span class="nv">unvert</span><span class="kd">←</span><span class="kt">{</span><span class="o">⍉↑⊂</span><span class="na">⍤</span><span class="m">¯1</span><span class="na">¨</span><span class="bp">⍵</span><span class="kt">}</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div></section></section><section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-APL"><pre><span></span><span class="nv">unvert</span> <span class="nv">creatures</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[18]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<span style="white-space:pre; font-family: monospace">┌─────┬───┬───────────┐
+│cats │412│selfish    │
+├─────┼───┼───────────┤
+│dogs │418│loyal      │
+├─────┼───┼───────────┤
+│ducks│520│mischievous│
+├─────┼───┼───────────┤
+│goats│136│baa        │
+└─────┴───┴───────────┘
+</span>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></section></section><section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-APL"><pre><span></span><span class="sr">]</span><span class="nv">runtime</span> <span class="o">-</span><span class="nv">c</span> <span class="s2">&quot;(unvert creatures)⍳ unvert good&quot;</span> <span class="s2">&quot;creatures (8⌶) good&quot;</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[19]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<span style="white-space:pre; font-family: monospace">                                                                               
+  (unvert creatures)⍳ unvert good → 7.3E¯6 |   0% ⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕
+  creatures (8⌶) good             → 8.7E¯7 | -89% ⎕⎕⎕⎕⎕                        
+
+                  
+      ⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕ 
+                  
+</span>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Do work on large arrays where possible</p>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-APL"><pre><span></span><span class="nv">b</span><span class="kd">←</span><span class="m">1</span><span class="o">=?</span><span class="m">100</span> <span class="m">100</span><span class="o">⍴</span><span class="m">2</span>
+<span class="sr">]</span><span class="nv">runtime</span> <span class="o">-</span><span class="nv">c</span> <span class="s2">&quot;+/,{3&lt;+/,⍵}⌺3 3⊢b&quot;</span> <span class="s2">&quot;+/,3&lt;{+/,⍵}⌺3 3⊢b&quot;</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[20]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<span style="white-space:pre; font-family: monospace">                                                                              
+  +/,{3&lt;+/,⍵}⌺3 3⊢b → 3.8E¯2 |    0% ⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕ 
+  +/,3&lt;{+/,⍵}⌺3 3⊢b → 3.1E¯5 | -100%                                          
+</span>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Using-special-cased-code">Using special cased code<a class="anchor-link" href="#Using-special-cased-code">&#182;</a></h2><p><a href="https://www.youtube.com/watch?v=-6no6N3i9Tg">Dyalog '18: The Interpretive Advantage</a></p>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-APL"><pre><span></span><span class="nv">A</span><span class="kd">←</span><span class="o">?</span><span class="m">1e4</span><span class="o">⍴</span><span class="m">1e2</span>
+<span class="sr">]</span><span class="nv">runtime</span> <span class="o">-</span><span class="nv">c</span> <span class="s2">&quot;{≢,⍵}⌸A&quot;</span> <span class="s2">&quot;{≢⍵}⌸A&quot;</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[21]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<span style="white-space:pre; font-family: monospace">                                                                   
+  {≢,⍵}⌸A → 1.9E¯4 |   0% ⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕ 
+  {≢⍵}⌸A  → 1.0E¯5 | -95% ⎕⎕                                       
+</span>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><a href="https://help.dyalog.com/latest/index.htm#Language/Defined%20Functions%20and%20Operators/Idiom%20Recognition/Idiom%20List.htm">Dyalog idioms</a></p>
+<p>Search: <em>dyalog help idiom list</em></p>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-APL"><pre><span></span><span class="c1">⍝ Sorting idioms</span>
+<span class="sr">]</span><span class="nv">runtime</span> <span class="o">-</span><span class="nv">c</span> <span class="s2">&quot;{⍵⌷⍨⊂⍋⍵}A&quot;</span> <span class="s2">&quot;{(⊂⍋⍵)⌷⍵}A&quot;</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[22]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<span style="white-space:pre; font-family: monospace">                                                                      
+  {⍵⌷⍨⊂⍋⍵}A  → 2.6E¯5 |   0% ⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕ 
+  {(⊂⍋⍵)⌷⍵}A → 9.2E¯6 | -66% ⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕                           
+</span>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Algorithms-and-Primitive-Complexity">Algorithms and Primitive Complexity<a class="anchor-link" href="#Algorithms-and-Primitive-Complexity">&#182;</a></h2><p>Hsu, A.W., 2019. A data parallel compiler hosted on the GPU.</p>
+<p>APL makes it easy to reason about algorithms.</p>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-APL"><pre><span></span><span class="nv">PT0</span><span class="kd">←</span><span class="nv">PrimesTil</span><span class="kd">←</span><span class="kt">{</span><span class="err">⍸</span><span class="m">2</span><span class="o">=+</span><span class="na">⌿</span><span class="m">0</span><span class="o">=</span><span class="na">∘.</span><span class="o">|</span><span class="na">⍨</span><span class="o">⍳</span><span class="bp">⍵</span><span class="kt">}</span>   <span class="c1">⍝ Primes from 1 to ⍵ using Modulo and Reduction</span>
+<span class="nv">PT1</span><span class="kd">←</span><span class="p">(</span><span class="o">⊢~</span><span class="na">∘.</span><span class="o">×</span><span class="na">⍨</span><span class="p">)</span><span class="m">1</span><span class="o">↓⍳</span>                 <span class="c1">⍝ Without Products                             </span>
+<span class="p">)</span><span class="nv">copy</span> <span class="nv">dfns</span> <span class="nv">sieve</span> <span class="nv">pco</span>                                                           
+<span class="nv">PT2</span><span class="kd">←</span><span class="nv">sieve</span> <span class="m">1</span><span class="o">↓⍳</span>                   <span class="c1">⍝ Sieve of Eratosthenes                        </span>
+<span class="nv">PT3</span><span class="kd">←</span><span class="err">⍸</span><span class="m">10</span> <span class="nv">pco</span> <span class="m">1</span><span class="o">,⊢</span>                 <span class="c1">⍝ dfns.pco (lookup table)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[23]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<span style="white-space:pre; font-family: monospace">/opt/mdyalog/17.1/64/unicode/ws/dfns.dws saved Tue Nov 12 00:26:19 2019
+</span>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></section></section><section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[32]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-APL"><pre><span></span><span class="nf">⎕VR</span><span class="s1">&#39;sieve&#39;</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[32]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<span style="white-space:pre; font-family: monospace">     ∇ sieve←{             ⍝ Sieve of Eratosthenes.       
+[1]        ⍺←⍬             ⍝ Default no primes yet.       
+[2]        nxt←1↑⍵         ⍝ Next prime, and              
+[3]        msk←0≠nxt|⍵     ⍝ ... mask of non-multiples.   
+[4]        ∧/1↓msk:⍺,⍵     ⍝ All non multiples - finished.
+[5]        (⍺,nxt)∇ msk/⍵  ⍝ Sieve remainder.             
+[6]    }                                                  
+     ∇                                                    
+</span>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></section></section><section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-APL"><pre><span></span><span class="err">_</span><span class="nv">Time</span><span class="kd">←</span><span class="kt">{</span><span class="o">⍎</span><span class="m">0</span> <span class="m">0</span> <span class="m">0</span> <span class="m">0.2</span> <span class="nv">cmpx</span> <span class="bp">⍺⍺</span><span class="o">,</span><span class="s1">&#39; &#39;</span><span class="o">,⍕</span><span class="bp">⍵</span><span class="kt">}</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div></section></section><section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-APL"><pre><span></span><span class="o">⊢</span><span class="nv">n</span><span class="kd">←</span><span class="m">5</span><span class="o">↓⌊</span><span class="m">10</span><span class="o">*</span><span class="m">0.1</span><span class="o">×⍳</span><span class="m">20</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[25]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<span style="white-space:pre; font-family: monospace">3 5 6 7 10 12 15 19 25 31 39 50 63 79 100
+</span>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></section></section><section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[26]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-APL"><pre><span></span><span class="p">)</span><span class="nv">copy</span> <span class="nv">sharpplot</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[26]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<span style="white-space:pre; font-family: monospace">/opt/mdyalog/17.1/64/unicode/ws/sharpplot.dws saved Tue Nov 12 00:23:00 2019
+</span>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></section></section><section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[27]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-APL"><pre><span></span><span class="bp">∇</span> <span class="kt">{</span><span class="nv">key</span><span class="kt">}</span><span class="nv">Plot</span> <span class="nv">data</span><span class="sr">;</span><span class="nv">d</span><span class="sr">;</span><span class="nv">n</span><span class="sr">;</span><span class="nv">s</span>
+ <span class="bp">:</span><span class="nv">If</span> <span class="m">0</span><span class="o">=</span><span class="nf">⎕NC</span><span class="s1">&#39;key&#39;</span>
+     <span class="nv">key</span><span class="kd">←</span><span class="s1">&#39;&#39;</span>
+ <span class="bp">:</span><span class="nv">EndIf</span>
+ <span class="nv">s</span><span class="kd">←</span><span class="nf">⎕NEW</span> <span class="nv">SharpPlot</span>
+ <span class="nv">n</span><span class="kd">←</span><span class="o">⊃</span><span class="nv">data</span>
+ <span class="bp">:</span><span class="nv">For</span> <span class="nv">d</span> <span class="bp">:</span><span class="nv">In</span> <span class="err">⊆</span><span class="o">⊃⌽</span><span class="nv">data</span>
+     <span class="nv">s</span><span class="na">.</span><span class="nv">DrawLineGraph</span> <span class="nv">d</span> <span class="nv">n</span>
+ <span class="bp">:</span><span class="nv">EndFor</span>
+ <span class="nv">s</span><span class="na">.</span><span class="nv">SetKeyText</span> <span class="nv">key</span>
+ <span class="nv">View</span> <span class="nv">s</span>
+<span class="bp">∇</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[28]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-APL"><pre><span></span><span class="s1">&#39;Modulo reduction&#39;</span> <span class="s1">&#39;Without products&#39;</span> <span class="s1">&#39;Sieve&#39;</span> <span class="s1">&#39;dfns.pco&#39;</span> <span class="nv">Plot</span> <span class="nv">n</span><span class="kt">{</span><span class="bp">⍺⍵</span><span class="kt">}</span><span class="p">(</span><span class="s1">&#39;PT0&#39;</span><span class="err">_</span><span class="nv">Time</span><span class="na">¨</span><span class="nv">n</span><span class="p">)(</span><span class="s1">&#39;PT1&#39;</span><span class="err">_</span><span class="nv">Time</span><span class="na">¨</span><span class="nv">n</span><span class="p">)(</span><span class="s1">&#39;PT2&#39;</span><span class="err">_</span><span class="nv">Time</span><span class="na">¨</span><span class="nv">n</span><span class="p">)(</span><span class="s1">&#39;PT3&#39;</span><span class="err">_</span><span class="nv">Time</span><span class="na">¨</span><span class="nv">n</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[28]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<svg version="1.1" baseProfile="full" width="100%" height="100%" viewBox="0 0 4320 3240"  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events" >
+<desc>Created by Causeway SVG engine - SharpPlot v3.62.2</desc>
+<g stroke-miterlimit="100">
+<desc>Paint the paper =====</desc>
+ <g fill="White" >
+  <rect x="0" y="0" width="4320" height="3240" />
+ </g>
+<desc>Border =====</desc>
+<desc>Region =====</desc>
+<desc>X-Axis Ticks =====</desc>
+<desc>X-Axis tickmarks</desc>
+ <path fill="none" stroke-width="7.2" stroke="Black" d="M400 2720L400 2764M770 2720L770 2764M1140 2720L1140 2764M1510 2720L1510 2764M1880 2720L1880 2764M2250 2720L2250 2764M2620 2720L2620 2764M2990 2720L2990 2764M3360 2720L3360 2764M3730 2720L3730 2764M4100 2720L4100 2764"/>
+<desc>Y-Axis Ticks =====</desc>
+<desc>Y-Axis tickmarks</desc>
+ <path fill="none" stroke-width="7.2" stroke="Black" d="M400 2720L367 2720M400 2438L367 2438M400 2155L367 2155M400 1873L367 1873M400 1590L367 1590M400 1308L367 1308M400 1025L367 1025M400 743L367 743M400 460L367 460"/>
+<desc>Axes =====</desc>
+ <path fill="none" stroke-width="12" stroke="Black" d="M400 2764L400 416M356 2720L4144 2720"/>
+<desc>Y-axis labels</desc>
+ <g font-family="Times New Roman" font-size="80" text-anchor="end" >
+  <text x="335" y="2740" >0</text>
+  <text x="335" y="2458" >0.000005</text>
+  <text x="335" y="2175" >0.00001</text>
+  <text x="335" y="1893" >0.000015</text>
+  <text x="335" y="1610" >0.00002</text>
+  <text x="335" y="1328" >0.000025</text>
+  <text x="335" y="1045" >0.00003</text>
+  <text x="335" y="763" >0.000035</text>
+  <text x="335" y="480" >0.00004</text>
+ </g>
+<desc>for X-axis labels</desc>
+ <g font-family="Times New Roman" font-size="80" text-anchor="middle" >
+  <text x="400" y="2844" >0</text>
+  <text x="770" y="2844" >10</text>
+  <text x="1140" y="2844" >20</text>
+  <text x="1510" y="2844" >30</text>
+  <text x="1880" y="2844" >40</text>
+  <text x="2250" y="2844" >50</text>
+  <text x="2620" y="2844" >60</text>
+  <text x="2990" y="2844" >70</text>
+  <text x="3360" y="2844" >80</text>
+  <text x="3730" y="2844" >90</text>
+  <text x="4100" y="2844" >100</text>
+ </g>
+<desc>Heading, subheading and footnotes =====</desc>
+<desc>Start of Line Chart ===========</desc>
+<desc>Points follow ...</desc>
+<desc>Line</desc>
+ <g stroke-width="3" stroke="Navy" stroke-linejoin="round" stroke-linecap="round" fill="none" >
+  <path d="M4100 686L3323 856 2731 1816 2250 2099 1843 2302 1547 2404 1325 2460 1103 2517 955 2534 844 2567 770 2562 659 2579 622 2584 585 2584 511 2584" />
+ </g>
+<desc>Start of Line Chart ===========</desc>
+<desc>Points follow ...</desc>
+<desc>Line</desc>
+ <g stroke-width="3" stroke="Maroon" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="9 12" fill="none" >
+  <path d="M4100 1534L3323 1929 2731 2155 2250 2302 1843 2398 1547 2477 1325 2522 1103 2562 955 2528 844 2590 770 2596 659 2607 622 2613 585 2601 511 2624" />
+ </g>
+<desc>Start of Line Chart ===========</desc>
+<desc>Points follow ...</desc>
+<desc>Line</desc>
+ <g stroke-width="3" stroke="Teal" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="0.3 5.7" fill="none" >
+  <path d="M4100 1703L3323 1703 2731 1590 2250 1703 1843 1929 1547 1873 1325 1873 1103 2099 955 2099 844 2099 770 2099 659 2262 622 2279 585 2291 511 2488" />
+ </g>
+<desc>Start of Line Chart ===========</desc>
+<desc>Points follow ...</desc>
+<desc>Clipped Line</desc>
+ <g stroke-width="3" stroke="Green" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="9 6.45 0.3 6.45" fill="none" >
+  <path d="M3191 40L2731 347 2250 291 1843 573 1547 686 1325 686 1103 573 955 686 844 573 770 460 659 404 622 404 585 404 511 630M4100 178L3627 40" />
+ </g>
+<desc>Key =====</desc>
+<desc>Key - Line</desc>
+ <g stroke-width="3" stroke="Navy" fill="none" >
+  <path d="M643 3005L490 3005" />
+ </g>
+<desc>Key - Line</desc>
+ <g stroke-width="3" stroke="Maroon" stroke-linecap="round" stroke-dasharray="9 12" fill="none" >
+  <path d="M1569 3005L1416 3005" />
+ </g>
+<desc>Key - Line</desc>
+ <g stroke-width="3" stroke="Teal" stroke-linecap="round" stroke-dasharray="0.3 5.7" fill="none" >
+  <path d="M2476 3005L2323 3005" />
+ </g>
+<desc>Key - Line</desc>
+ <g stroke-width="3" stroke="Green" stroke-linecap="round" stroke-dasharray="9 6.45 0.3 6.45" fill="none" >
+  <path d="M2955 3005L2802 3005" />
+ </g>
+ <g fill="Navy" font-family="Times New Roman" font-size="90" >
+  <text x="688" y="3032" >Modulo reduction</text>
+ </g>
+ <g fill="Navy" font-family="Times New Roman" font-size="90" >
+  <text x="1614" y="3032" >Without products</text>
+ </g>
+ <g fill="Navy" font-family="Times New Roman" font-size="90" >
+  <text x="2521" y="3032" >Sieve</text>
+ </g>
+ <g fill="Navy" font-family="Times New Roman" font-size="90" >
+  <text x="3000" y="3032" >dfns.pco</text>
+ </g>
+<desc>Reset to original origin</desc>
+</g>
+</svg>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></section></section><section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[31]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-APL"><pre><span></span><span class="o">⊢</span><span class="nv">n</span><span class="kd">←</span><span class="m">5</span><span class="o">↓⌊</span><span class="m">10</span><span class="o">*</span><span class="m">0.1</span><span class="o">×⍳</span><span class="m">22</span>
+<span class="s1">&#39;Modulo reduction&#39;</span> <span class="s1">&#39;Without products&#39;</span> <span class="s1">&#39;Sieve&#39;</span> <span class="s1">&#39;dfns.pco&#39;</span> <span class="nv">Plot</span> <span class="nv">n</span><span class="kt">{</span><span class="bp">⍺⍵</span><span class="kt">}</span><span class="p">(</span><span class="s1">&#39;PT0&#39;</span><span class="err">_</span><span class="nv">Time</span><span class="na">¨</span><span class="nv">n</span><span class="p">)(</span><span class="s1">&#39;PT1&#39;</span><span class="err">_</span><span class="nv">Time</span><span class="na">¨</span><span class="nv">n</span><span class="p">)(</span><span class="s1">&#39;PT2&#39;</span><span class="err">_</span><span class="nv">Time</span><span class="na">¨</span><span class="nv">n</span><span class="p">)(</span><span class="s1">&#39;PT3&#39;</span><span class="err">_</span><span class="nv">Time</span><span class="na">¨</span><span class="nv">n</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[31]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<span style="white-space:pre; font-family: monospace">3 5 6 7 10 12 15 19 25 31 39 50 63 79 100 125 158
+</span>
+</div>
+
+</div>
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[31]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<svg version="1.1" baseProfile="full" width="100%" height="100%" viewBox="0 0 4320 3240"  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events" >
+<desc>Created by Causeway SVG engine - SharpPlot v3.62.2</desc>
+<g stroke-miterlimit="100">
+<desc>Paint the paper =====</desc>
+ <g fill="White" >
+  <rect x="0" y="0" width="4320" height="3240" />
+ </g>
+<desc>Border =====</desc>
+<desc>Region =====</desc>
+<desc>X-Axis Ticks =====</desc>
+<desc>X-Axis tickmarks</desc>
+ <path fill="none" stroke-width="7.2" stroke="Black" d="M400 2720L400 2764M631 2720L631 2764M863 2720L863 2764M1094 2720L1094 2764M1325 2720L1325 2764M1556 2720L1556 2764M1788 2720L1788 2764M2019 2720L2019 2764M2250 2720L2250 2764M2481 2720L2481 2764M2713 2720L2713 2764M2944 2720L2944 2764M3175 2720L3175 2764M3406 2720L3406 2764M3638 2720L3638 2764M3869 2720L3869 2764M4100 2720L4100 2764"/>
+<desc>Y-Axis Ticks =====</desc>
+<desc>Y-Axis tickmarks</desc>
+ <path fill="none" stroke-width="7.2" stroke="Black" d="M400 2720L367 2720M400 2469L367 2469M400 2218L367 2218M400 1967L367 1967M400 1716L367 1716M400 1464L367 1464M400 1213L367 1213M400 962L367 962M400 711L367 711M400 460L367 460"/>
+<desc>Axes =====</desc>
+ <path fill="none" stroke-width="12" stroke="Black" d="M400 2764L400 416M356 2720L4144 2720"/>
+<desc>Y-axis labels</desc>
+ <g font-family="Times New Roman" font-size="80" text-anchor="end" >
+  <text x="335" y="2740" >0</text>
+  <text x="335" y="2489" >0.00001</text>
+  <text x="335" y="2238" >0.00002</text>
+  <text x="335" y="1987" >0.00003</text>
+  <text x="335" y="1736" >0.00004</text>
+  <text x="335" y="1484" >0.00005</text>
+  <text x="335" y="1233" >0.00006</text>
+  <text x="335" y="982" >0.00007</text>
+  <text x="335" y="731" >0.00008</text>
+  <text x="335" y="480" >0.00009</text>
+ </g>
+<desc>for X-axis labels</desc>
+ <g font-family="Times New Roman" font-size="80" text-anchor="middle" >
+  <text x="400" y="2844" >0</text>
+  <text x="631" y="2844" >10</text>
+  <text x="863" y="2844" >20</text>
+  <text x="1094" y="2844" >30</text>
+  <text x="1325" y="2844" >40</text>
+  <text x="1556" y="2844" >50</text>
+  <text x="1788" y="2844" >60</text>
+  <text x="2019" y="2844" >70</text>
+  <text x="2250" y="2844" >80</text>
+  <text x="2481" y="2844" >90</text>
+  <text x="2713" y="2844" >100</text>
+  <text x="2944" y="2844" >110</text>
+  <text x="3175" y="2844" >120</text>
+  <text x="3406" y="2844" >130</text>
+  <text x="3638" y="2844" >140</text>
+  <text x="3869" y="2844" >150</text>
+  <text x="4100" y="2844" >160</text>
+ </g>
+<desc>Heading, subheading and footnotes =====</desc>
+<desc>Start of Line Chart ===========</desc>
+<desc>Points follow ...</desc>
+<desc>Line</desc>
+ <g stroke-width="3" stroke="Navy" stroke-linejoin="round" stroke-linecap="round" fill="none" >
+  <path d="M4054 460L3291 1364 2713 1816 2227 2142 1857 2318 1556 2444 1302 2537 1117 2552 978 2610 839 2632 747 2642 678 2652 631 2652 562 2657 539 2660 516 2660 469 2662" />
+ </g>
+<desc>Start of Line Chart ===========</desc>
+<desc>Points follow ...</desc>
+<desc>Clipped Line</desc>
+ <g stroke-width="3" stroke="Maroon" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="9 12" fill="none" >
+  <path d="M3369 40L3291 2042 2713 2243 2227 2394 1857 2491 1556 2549 1302 2589 1117 2620 978 2635 839 2650 747 2657 678 2662 631 2667 562 2670 539 2672 516 2670 469 2675" />
+ </g>
+<desc>Start of Line Chart ===========</desc>
+<desc>Points follow ...</desc>
+<desc>Line</desc>
+ <g stroke-width="3" stroke="Teal" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="0.3 5.7" fill="none" >
+  <path d="M4054 2142L3291 2168 2713 2243 2227 2243 1857 2243 1556 2268 1302 2343 1117 2343 978 2343 839 2444 747 2419 678 2419 631 2444 562 2524 539 2522 516 2529 469 2617" />
+ </g>
+<desc>Start of Line Chart ===========</desc>
+<desc>Points follow ...</desc>
+<desc>Line</desc>
+ <g stroke-width="3" stroke="Green" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="9 6.45 0.3 6.45" fill="none" >
+  <path d="M4054 1414L3291 1414 2713 1565 2227 1464 1857 1665 1556 1665 1302 1791 1117 1791 978 1816 839 1816 747 1615 678 1816 631 1816 562 1791 539 1741 516 1816 469 1791" />
+ </g>
+<desc>Key =====</desc>
+<desc>Key - Line</desc>
+ <g stroke-width="3" stroke="Navy" fill="none" >
+  <path d="M643 3005L490 3005" />
+ </g>
+<desc>Key - Line</desc>
+ <g stroke-width="3" stroke="Maroon" stroke-linecap="round" stroke-dasharray="9 12" fill="none" >
+  <path d="M1569 3005L1416 3005" />
+ </g>
+<desc>Key - Line</desc>
+ <g stroke-width="3" stroke="Teal" stroke-linecap="round" stroke-dasharray="0.3 5.7" fill="none" >
+  <path d="M2476 3005L2323 3005" />
+ </g>
+<desc>Key - Line</desc>
+ <g stroke-width="3" stroke="Green" stroke-linecap="round" stroke-dasharray="9 6.45 0.3 6.45" fill="none" >
+  <path d="M2955 3005L2802 3005" />
+ </g>
+ <g fill="Navy" font-family="Times New Roman" font-size="90" >
+  <text x="688" y="3032" >Modulo reduction</text>
+ </g>
+ <g fill="Navy" font-family="Times New Roman" font-size="90" >
+  <text x="1614" y="3032" >Without products</text>
+ </g>
+ <g fill="Navy" font-family="Times New Roman" font-size="90" >
+  <text x="2521" y="3032" >Sieve</text>
+ </g>
+ <g fill="Navy" font-family="Times New Roman" font-size="90" >
+  <text x="3000" y="3032" >dfns.pco</text>
+ </g>
+<desc>Reset to original origin</desc>
+</g>
+</svg>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -13130,6 +14258,17 @@ a.anchor-link {
 <li><a href="http://docs.dyalog.com/latest/Compiler%20User%20Guide.pdf">Jay's Dyalog Compiler</a></li>
 <li><a href="http://snakeisland.com/apexup.htm">APEX: The APL Parallel Executor</a></li>
 </ul>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Next-Webinar">Next Webinar<a class="anchor-link" href="#Next-Webinar">&#182;</a></h2><p>Thursday 19th March 16:00 UTC</p>
+<p>Progressive set functions</p>
+<p>Richard Park</p>
 
 </div>
 </div>
