@@ -12849,7 +12849,7 @@ a.anchor-link {
 </div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-APL"><pre><span></span><span class="nv">R</span><span class="kd">←</span><span class="m">¯2</span><span class="o">⌽</span><span class="m">¯1</span><span class="o">⊖</span><span class="m">5</span> <span class="m">7</span><span class="o">↑</span><span class="p">(</span><span class="m">3</span> <span class="m">3</span><span class="o">⍴⍳</span><span class="m">9</span><span class="p">)</span><span class="o">∊</span><span class="m">2</span> <span class="m">3</span> <span class="m">4</span> <span class="m">5</span> <span class="m">8</span>
@@ -12858,33 +12858,6 @@ a.anchor-link {
 </pre></div>
 
 </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt output_prompt">Out[1]:</div>
-
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<span style="white-space:pre; font-family: monospace">done
-    _⍸   
-___( ∘)&gt;  ∘○O( ⊃∨∧⌊○⊂ 2020-02-20 07:20:26 )
-\ ≤_. )  
- `---´   
-
-
-Rebuilding user command cache... done
-</span>
-</div>
-
-</div>
-
 </div>
 </div>
 
@@ -12902,7 +12875,7 @@ Rebuilding user command cache... done
 </div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-APL"><pre><span></span><span class="sr">]</span><span class="nv">runtime</span> <span class="o">-</span><span class="nv">c</span> <span class="s2">&quot;lifeNested R&quot;</span> <span class="s2">&quot;lifeFlat R&quot;</span>
@@ -12918,14 +12891,14 @@ Rebuilding user command cache... done
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[2]:</div>
+<div class="prompt output_prompt">Out[3]:</div>
 
 
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <span style="white-space:pre; font-family: monospace">                                                                        
-  lifeNested R → 1.5E¯5 |   0% ⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕ 
-  lifeFlat R   → 1.1E¯5 | -23% ⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕          
+  lifeNested R → 1.4E¯5 |   0% ⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕ 
+  lifeFlat R   → 1.1E¯5 | -21% ⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕         
 </span>
 </div>
 
@@ -12945,15 +12918,51 @@ $$\sum_{n=1}^{N}({A_n}\div{N})$$</p>
 </div>
 </div>
 </div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>$${(\sum_{n=1}^{N}A_n})\div{N}$$</p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-APL"><pre><span></span><span class="sr">]</span><span class="nv">dinput</span>
 <span class="nv">avg1</span><span class="kd">←</span><span class="kt">{</span>
-  <span class="nv">c</span><span class="kd">←</span><span class="o">≢</span><span class="bp">⍵</span>    <span class="c1">⍝ Count elements </span>
-  <span class="nv">n</span><span class="kd">←</span><span class="bp">⍵</span><span class="o">÷</span><span class="nv">c</span>   <span class="c1">⍝ Array divided by count</span>
+  <span class="nv">N</span><span class="kd">←</span><span class="o">≢</span><span class="bp">⍵</span>    <span class="c1">⍝ Count elements</span>
+  <span class="nv">s</span><span class="kd">←</span><span class="o">+</span><span class="na">⌿</span><span class="bp">⍵</span>   <span class="c1">⍝ Sum elements </span>
+  <span class="nv">s</span><span class="o">÷</span><span class="nv">N</span>     <span class="c1">⍝ Sum divided by count</span>
+<span class="kt">}</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>$$\sum_{n=1}^{N}({A_n}\div{N})$$</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-APL"><pre><span></span><span class="sr">]</span><span class="nv">dinput</span>
+<span class="nv">avg2</span><span class="kd">←</span><span class="kt">{</span>
+  <span class="nv">N</span><span class="kd">←</span><span class="o">≢</span><span class="bp">⍵</span>    <span class="c1">⍝ Count elements </span>
+  <span class="nv">n</span><span class="kd">←</span><span class="bp">⍵</span><span class="o">÷</span><span class="nv">N</span>   <span class="c1">⍝ Array divided by count</span>
   <span class="o">+</span><span class="na">⌿</span><span class="nv">n</span>     <span class="c1">⍝ Sum</span>
 <span class="kt">}</span>
 </pre></div>
@@ -12965,25 +12974,7 @@ $$\sum_{n=1}^{N}({A_n}\div{N})$$</p>
 </div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-APL"><pre><span></span><span class="sr">]</span><span class="nv">dinput</span>
-<span class="nv">avg2</span><span class="kd">←</span><span class="kt">{</span>
-  <span class="nv">c</span><span class="kd">←</span><span class="o">≢</span><span class="bp">⍵</span>    <span class="c1">⍝ Count elements</span>
-  <span class="nv">s</span><span class="kd">←</span><span class="o">+</span><span class="na">⌿</span><span class="bp">⍵</span>   <span class="c1">⍝ Sum elements </span>
-  <span class="nv">s</span><span class="o">÷</span><span class="nv">c</span>     <span class="c1">⍝ Sum divided by count</span>
-<span class="kt">}</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div></section></section><section><section>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-APL"><pre><span></span><span class="p">)</span><span class="nv">copy</span> <span class="nv">dfns</span> <span class="nv">cmpx</span>
@@ -13001,7 +12992,7 @@ $$\sum_{n=1}^{N}({A_n}\div{N})$$</p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[5]:</div>
+<div class="prompt output_prompt">Out[6]:</div>
 
 
 
@@ -13014,13 +13005,13 @@ $$\sum_{n=1}^{N}({A_n}\div{N})$$</p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[5]:</div>
+<div class="prompt output_prompt">Out[6]:</div>
 
 
 
 <div class="output_html rendered_html output_subarea output_execute_result">
-<span style="white-space:pre; font-family: monospace">  avg1 n → 4.2E¯6 |   0% ⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕
-  avg2 n → 2.3E¯6 | -47% ⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕                   
+<span style="white-space:pre; font-family: monospace">  avg1 n → 2.1E¯6 |   0% ⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕                   
+  avg2 n → 4.1E¯6 | +91% ⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕
 </span>
 </div>
 
@@ -13032,7 +13023,7 @@ $$\sum_{n=1}^{N}({A_n}\div{N})$$</p>
 </div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-APL"><pre><span></span><span class="sr">]</span><span class="nv">runtime</span> <span class="o">-?</span>
@@ -13048,7 +13039,7 @@ $$\sum_{n=1}^{N}({A_n}\div{N})$$</p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[6]:</div>
+<div class="prompt output_prompt">Out[7]:</div>
 
 
 
@@ -13075,7 +13066,7 @@ Report execution time of one or more expressions
 </div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-APL"><pre><span></span><span class="nf">⎕PROFILE</span> <span class="s1">&#39;start&#39;</span>
@@ -13094,7 +13085,7 @@ Report execution time of one or more expressions
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[7]:</div>
+<div class="prompt output_prompt">Out[8]:</div>
 
 
 
@@ -13107,17 +13098,17 @@ Report execution time of one or more expressions
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[7]:</div>
+<div class="prompt output_prompt">Out[8]:</div>
 
 
 
 <div class="output_html rendered_html output_subarea output_execute_result">
-<span style="white-space:pre; font-family: monospace"> Total time: 0.6 msec                          
+<span style="white-space:pre; font-family: monospace"> Total time: 0.3 msec                          
                                                
   Element                 msec       %  Calls  
-  ⎕SE.Dyalog.Out.Filter    1.2   220.4      6  
-  ⎕SE.Dyalog.Out.Box       0.1    20.6      5  
-  #.avg1                   0.0     3.4      1  
+  ⎕SE.Dyalog.Out.Filter    0.8   226.3      6  
+  ⎕SE.Dyalog.Out.Box       0.1    24.9      5  
+  #.avg1                   0.0     3.0      1  
 </span>
 </div>
 
@@ -13129,7 +13120,7 @@ Report execution time of one or more expressions
 </div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-APL"><pre><span></span><span class="nv">repeat</span><span class="kd">←</span><span class="m">1e4</span>
@@ -13143,7 +13134,7 @@ Report execution time of one or more expressions
 </div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-APL"><pre><span></span><span class="nv">repeat</span> <span class="nv">avg1</span> <span class="err">_</span><span class="nv">Profile</span> <span class="nv">n</span>
@@ -13161,17 +13152,17 @@ Report execution time of one or more expressions
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[9]:</div>
+<div class="prompt output_prompt">Out[10]:</div>
 
 
 
 <div class="output_html rendered_html output_subarea output_execute_result">
-<span style="white-space:pre; font-family: monospace">     ∇ avg1←{                              
-[1]        c←≢⍵    ⍝ Count elements        
-[2]        n←⍵÷c   ⍝ Array divided by count
-[3]        +⌿n     ⍝ Sum                   
-[4]    }                                   
-     ∇                                     
+<span style="white-space:pre; font-family: monospace">     ∇ avg1←{                            
+[1]        N←≢⍵    ⍝ Count elements      
+[2]        s←+⌿⍵   ⍝ Sum elements        
+[3]        s÷N     ⍝ Sum divided by count
+[4]    }                                 
+     ∇                                   
 </span>
 </div>
 
@@ -13179,18 +13170,18 @@ Report execution time of one or more expressions
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[9]:</div>
+<div class="prompt output_prompt">Out[10]:</div>
 
 
 
 <div class="output_html rendered_html output_subarea output_execute_result">
-<span style="white-space:pre; font-family: monospace"> Total time: 50.3 msec              
+<span style="white-space:pre; font-family: monospace"> Total time: 20.8 msec              
                                     
   Element      msec      %   Calls  
-  #.avg1[2]    21.4   42.5   10000  
-  #.avg1[3]    19.7   39.1   10000  
-  #.avg1[1]     5.8   11.5   10000  
-  #.avg1[0]     2.2    4.3   10000  
+  #.avg1[2]    10.8   52.0   10000  
+  #.avg1[1]     4.8   23.1   10000  
+  #.avg1[3]     3.4   16.3   10000  
+  #.avg1[0]     1.2    5.9   10000  
 </span>
 </div>
 
@@ -13202,7 +13193,7 @@ Report execution time of one or more expressions
 </div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-APL"><pre><span></span><span class="nv">repeat</span> <span class="nv">avg2</span> <span class="err">_</span><span class="nv">Profile</span> <span class="nv">n</span>
@@ -13220,17 +13211,17 @@ Report execution time of one or more expressions
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[10]:</div>
+<div class="prompt output_prompt">Out[11]:</div>
 
 
 
 <div class="output_html rendered_html output_subarea output_execute_result">
-<span style="white-space:pre; font-family: monospace">     ∇ avg2←{                            
-[1]        c←≢⍵    ⍝ Count elements      
-[2]        s←+⌿⍵   ⍝ Sum elements        
-[3]        s÷c     ⍝ Sum divided by count
-[4]    }                                 
-     ∇                                   
+<span style="white-space:pre; font-family: monospace">     ∇ avg2←{                              
+[1]        N←≢⍵    ⍝ Count elements        
+[2]        n←⍵÷N   ⍝ Array divided by count
+[3]        +⌿n     ⍝ Sum                   
+[4]    }                                   
+     ∇                                     
 </span>
 </div>
 
@@ -13238,18 +13229,18 @@ Report execution time of one or more expressions
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[10]:</div>
+<div class="prompt output_prompt">Out[11]:</div>
 
 
 
 <div class="output_html rendered_html output_subarea output_execute_result">
-<span style="white-space:pre; font-family: monospace"> Total time: 33.0 msec              
+<span style="white-space:pre; font-family: monospace"> Total time: 43.6 msec              
                                     
   Element      msec      %   Calls  
-  #.avg2[2]    14.9   45.0   10000  
-  #.avg2[1]     7.3   22.2   10000  
-  #.avg2[3]     5.1   15.4   10000  
-  #.avg2[0]     3.7   11.3   10000  
+  #.avg2[2]    18.5   42.4   10000  
+  #.avg2[3]    18.3   42.1   10000  
+  #.avg2[1]     4.8   11.1   10000  
+  #.avg2[0]     1.3    3.1   10000  
 </span>
 </div>
 
@@ -13288,7 +13279,7 @@ Report execution time of one or more expressions
 </div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-APL"><pre><span></span><span class="m">3</span> <span class="m">4</span><span class="o">⍴</span><span class="nf">⎕A</span> <span class="c1">⍝ (3 4)(A B C D E F G H I J K L)</span>
@@ -13304,7 +13295,7 @@ Report execution time of one or more expressions
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[11]:</div>
+<div class="prompt output_prompt">Out[12]:</div>
 
 
 
@@ -13323,7 +13314,7 @@ IJKL
 </div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-APL"><pre><span></span><span class="c1">⍝ (2 3)(p0 p1 p2 p3 p4 p5)</span>
@@ -13346,7 +13337,7 @@ IJKL
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[12]:</div>
+<div class="prompt output_prompt">Out[13]:</div>
 
 
 
@@ -13371,7 +13362,7 @@ IJKL
 </div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-APL"><pre><span></span><span class="vg">⎕</span><span class="kd">←</span><span class="m">5</span><span class="o">↑</span><span class="nv">posNest</span><span class="kd">←</span><span class="o">?</span><span class="m">500</span><span class="o">⍴⊂</span><span class="m">3</span><span class="o">⍴</span><span class="m">10</span>
@@ -13388,7 +13379,7 @@ IJKL
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[13]:</div>
+<div class="prompt output_prompt">Out[14]:</div>
 
 
 
@@ -13403,7 +13394,7 @@ IJKL
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[13]:</div>
+<div class="prompt output_prompt">Out[14]:</div>
 
 
 
@@ -13424,7 +13415,7 @@ IJKL
 </div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-APL"><pre><span></span><span class="sr">]</span><span class="nv">runtime</span> <span class="o">-</span><span class="nv">c</span> <span class="s2">&quot;0.5*⍨+/¨2*⍨∘.-⍨posNest&quot;</span> <span class="s2">&quot;0.5*⍨+/2*⍨-⍤1⍤1 99⍨posFlat&quot;</span>
@@ -13440,14 +13431,14 @@ IJKL
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[14]:</div>
+<div class="prompt output_prompt">Out[15]:</div>
 
 
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <span style="white-space:pre; font-family: monospace">                                                                               
   0.5*⍨+/¨2*⍨∘.-⍨posNest     → 1.2E¯1 |   0% ⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕
-  0.5*⍨+/2*⍨-⍤1⍤1 99⍨posFlat → 7.8E¯3 | -94% ⎕⎕⎕                               
+  0.5*⍨+/2*⍨-⍤1⍤1 99⍨posFlat → 7.9E¯3 | -94% ⎕⎕⎕                               
 
              
       ⎕⎕⎕⎕⎕⎕ 
@@ -13472,7 +13463,7 @@ IJKL
 </div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-APL"><pre><span></span><span class="vg">⎕</span><span class="kd">←</span><span class="nv">creatures</span><span class="kd">←</span><span class="p">(</span><span class="o">↑</span><span class="s1">&#39;cats&#39;</span> <span class="s1">&#39;dogs&#39;</span> <span class="s1">&#39;ducks&#39;</span> <span class="s1">&#39;goats&#39;</span><span class="p">)(</span><span class="m">412</span> <span class="m">418</span> <span class="m">520</span> <span class="m">136</span><span class="p">)(</span><span class="o">↑</span><span class="s1">&#39;selfish&#39;</span> <span class="s1">&#39;loyal&#39;</span> <span class="s1">&#39;mischievous&#39;</span> <span class="s1">&#39;baa&#39;</span><span class="p">)</span>
@@ -13488,7 +13479,7 @@ IJKL
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[15]:</div>
+<div class="prompt output_prompt">Out[16]:</div>
 
 
 
@@ -13510,7 +13501,7 @@ IJKL
 </div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-APL"><pre><span></span><span class="vg">⎕</span><span class="kd">←</span><span class="nv">good</span><span class="kd">←</span><span class="p">(</span><span class="o">↑</span><span class="s1">&#39;dogs&#39;</span> <span class="s1">&#39;goats&#39;</span><span class="p">)(</span><span class="m">418</span> <span class="m">136</span><span class="p">)(</span><span class="m">2</span> <span class="m">11</span><span class="o">⍴</span><span class="s1">&#39;loyal      baa        &#39;</span><span class="p">)</span>
@@ -13526,7 +13517,7 @@ IJKL
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[16]:</div>
+<div class="prompt output_prompt">Out[17]:</div>
 
 
 
@@ -13546,7 +13537,7 @@ IJKL
 </div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-APL"><pre><span></span><span class="nv">IIX</span> <span class="kd">←</span> <span class="m">8</span><span class="err">⌶</span> <span class="c1">⍝(Inverted-table IndeX of)</span>
@@ -13554,47 +13545,6 @@ IJKL
 </pre></div>
 
 </div>
-</div>
-</div>
-
-</div></section></section><section><section>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[18]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-APL"><pre><span></span><span class="nv">unvert</span> <span class="nv">creatures</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt output_prompt">Out[18]:</div>
-
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<span style="white-space:pre; font-family: monospace">┌─────┬───┬───────────┐
-│cats │412│selfish    │
-├─────┼───┼───────────┤
-│dogs │418│loyal      │
-├─────┼───┼───────────┤
-│ducks│520│mischievous│
-├─────┼───┼───────────┤
-│goats│136│baa        │
-└─────┴───┴───────────┘
-</span>
-</div>
-
-</div>
-
 </div>
 </div>
 
@@ -13623,8 +13573,8 @@ IJKL
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <span style="white-space:pre; font-family: monospace">                                                                               
-  (unvert creatures)⍳ unvert good → 7.3E¯6 |   0% ⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕
-  creatures (8⌶) good             → 8.7E¯7 | -89% ⎕⎕⎕⎕⎕                        
+  (unvert creatures)⍳ unvert good → 7.1E¯6 |   0% ⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕
+  creatures (8⌶) good             → 8.5E¯7 | -89% ⎕⎕⎕⎕⎕                        
 
                   
       ⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕ 
@@ -13717,7 +13667,7 @@ IJKL
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <span style="white-space:pre; font-family: monospace">                                                                   
-  {≢,⍵}⌸A → 1.9E¯4 |   0% ⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕ 
+  {≢,⍵}⌸A → 1.8E¯4 |   0% ⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕ 
   {≢⍵}⌸A  → 1.0E¯5 | -95% ⎕⎕                                       
 </span>
 </div>
@@ -13763,8 +13713,8 @@ IJKL
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <span style="white-space:pre; font-family: monospace">                                                                      
-  {⍵⌷⍨⊂⍋⍵}A  → 2.6E¯5 |   0% ⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕ 
-  {(⊂⍋⍵)⌷⍵}A → 9.2E¯6 | -66% ⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕                           
+  {⍵⌷⍨⊂⍋⍵}A  → 2.4E¯5 |   0% ⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕ 
+  {(⊂⍋⍵)⌷⍵}A → 8.8E¯6 | -63% ⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕                          
 </span>
 </div>
 
@@ -13823,7 +13773,7 @@ IJKL
 </div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[32]:</div>
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-APL"><pre><span></span><span class="nf">⎕VR</span><span class="s1">&#39;sieve&#39;</span>
@@ -13839,7 +13789,7 @@ IJKL
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[32]:</div>
+<div class="prompt output_prompt">Out[24]:</div>
 
 
 
@@ -13863,7 +13813,7 @@ IJKL
 </div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-APL"><pre><span></span><span class="err">_</span><span class="nv">Time</span><span class="kd">←</span><span class="kt">{</span><span class="o">⍎</span><span class="m">0</span> <span class="m">0</span> <span class="m">0</span> <span class="m">0.2</span> <span class="nv">cmpx</span> <span class="bp">⍺⍺</span><span class="o">,</span><span class="s1">&#39; &#39;</span><span class="o">,⍕</span><span class="bp">⍵</span><span class="kt">}</span>
@@ -13876,43 +13826,10 @@ IJKL
 </div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[25]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-APL"><pre><span></span><span class="o">⊢</span><span class="nv">n</span><span class="kd">←</span><span class="m">5</span><span class="o">↓⌊</span><span class="m">10</span><span class="o">*</span><span class="m">0.1</span><span class="o">×⍳</span><span class="m">20</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt output_prompt">Out[25]:</div>
-
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<span style="white-space:pre; font-family: monospace">3 5 6 7 10 12 15 19 25 31 39 50 63 79 100
-</span>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div></section></section><section><section>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
 <div class="prompt input_prompt">In&nbsp;[26]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-APL"><pre><span></span><span class="p">)</span><span class="nv">copy</span> <span class="nv">sharpplot</span>
+<div class=" highlight hl-APL"><pre><span></span><span class="o">⊢</span><span class="nv">n</span><span class="kd">←</span><span class="m">5</span><span class="o">↓⌊</span><span class="m">10</span><span class="o">*</span><span class="m">0.1</span><span class="o">×⍳</span><span class="m">20</span>
 </pre></div>
 
 </div>
@@ -13930,7 +13847,7 @@ IJKL
 
 
 <div class="output_html rendered_html output_subarea output_execute_result">
-<span style="white-space:pre; font-family: monospace">/opt/mdyalog/17.1/64/unicode/ws/sharpplot.dws saved Tue Nov 12 00:23:00 2019
+<span style="white-space:pre; font-family: monospace">3 5 6 7 10 12 15 19 25 31 39 50 63 79 100
 </span>
 </div>
 
@@ -13943,6 +13860,39 @@ IJKL
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[27]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-APL"><pre><span></span><span class="p">)</span><span class="nv">copy</span> <span class="nv">sharpplot</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[27]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<span style="white-space:pre; font-family: monospace">/opt/mdyalog/17.1/64/unicode/ws/sharpplot.dws saved Tue Nov 12 00:23:00 2019
+</span>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></section></section><section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[28]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-APL"><pre><span></span><span class="bp">∇</span> <span class="kt">{</span><span class="nv">key</span><span class="kt">}</span><span class="nv">Plot</span> <span class="nv">data</span><span class="sr">;</span><span class="nv">d</span><span class="sr">;</span><span class="nv">n</span><span class="sr">;</span><span class="nv">s</span>
@@ -13963,10 +13913,10 @@ IJKL
 </div>
 </div>
 
-</div>
+</div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[28]:</div>
+<div class="prompt input_prompt">In&nbsp;[29]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-APL"><pre><span></span><span class="s1">&#39;Modulo reduction&#39;</span> <span class="s1">&#39;Without products&#39;</span> <span class="s1">&#39;Sieve&#39;</span> <span class="s1">&#39;dfns.pco&#39;</span> <span class="nv">Plot</span> <span class="nv">n</span><span class="kt">{</span><span class="bp">⍺⍵</span><span class="kt">}</span><span class="p">(</span><span class="s1">&#39;PT0&#39;</span><span class="err">_</span><span class="nv">Time</span><span class="na">¨</span><span class="nv">n</span><span class="p">)(</span><span class="s1">&#39;PT1&#39;</span><span class="err">_</span><span class="nv">Time</span><span class="na">¨</span><span class="nv">n</span><span class="p">)(</span><span class="s1">&#39;PT2&#39;</span><span class="err">_</span><span class="nv">Time</span><span class="na">¨</span><span class="nv">n</span><span class="p">)(</span><span class="s1">&#39;PT3&#39;</span><span class="err">_</span><span class="nv">Time</span><span class="na">¨</span><span class="nv">n</span><span class="p">)</span>
@@ -13982,7 +13932,7 @@ IJKL
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[28]:</div>
+<div class="prompt output_prompt">Out[29]:</div>
 
 
 
@@ -14001,20 +13951,19 @@ IJKL
  <path fill="none" stroke-width="7.2" stroke="Black" d="M400 2720L400 2764M770 2720L770 2764M1140 2720L1140 2764M1510 2720L1510 2764M1880 2720L1880 2764M2250 2720L2250 2764M2620 2720L2620 2764M2990 2720L2990 2764M3360 2720L3360 2764M3730 2720L3730 2764M4100 2720L4100 2764"/>
 <desc>Y-Axis Ticks =====</desc>
 <desc>Y-Axis tickmarks</desc>
- <path fill="none" stroke-width="7.2" stroke="Black" d="M400 2720L367 2720M400 2438L367 2438M400 2155L367 2155M400 1873L367 1873M400 1590L367 1590M400 1308L367 1308M400 1025L367 1025M400 743L367 743M400 460L367 460"/>
+ <path fill="none" stroke-width="7.2" stroke="Black" d="M400 2720L367 2720M400 2397L367 2397M400 2074L367 2074M400 1751L367 1751M400 1429L367 1429M400 1106L367 1106M400 783L367 783M400 460L367 460"/>
 <desc>Axes =====</desc>
  <path fill="none" stroke-width="12" stroke="Black" d="M400 2764L400 416M356 2720L4144 2720"/>
 <desc>Y-axis labels</desc>
  <g font-family="Times New Roman" font-size="80" text-anchor="end" >
   <text x="335" y="2740" >0</text>
-  <text x="335" y="2458" >0.000005</text>
-  <text x="335" y="2175" >0.00001</text>
-  <text x="335" y="1893" >0.000015</text>
-  <text x="335" y="1610" >0.00002</text>
-  <text x="335" y="1328" >0.000025</text>
-  <text x="335" y="1045" >0.00003</text>
-  <text x="335" y="763" >0.000035</text>
-  <text x="335" y="480" >0.00004</text>
+  <text x="335" y="2417" >0.000005</text>
+  <text x="335" y="2094" >0.00001</text>
+  <text x="335" y="1771" >0.000015</text>
+  <text x="335" y="1449" >0.00002</text>
+  <text x="335" y="1126" >0.000025</text>
+  <text x="335" y="803" >0.00003</text>
+  <text x="335" y="480" >0.000035</text>
  </g>
 <desc>for X-axis labels</desc>
  <g font-family="Times New Roman" font-size="80" text-anchor="middle" >
@@ -14035,25 +13984,25 @@ IJKL
 <desc>Points follow ...</desc>
 <desc>Line</desc>
  <g stroke-width="3" stroke="Navy" stroke-linejoin="round" stroke-linecap="round" fill="none" >
-  <path d="M4100 686L3323 856 2731 1816 2250 2099 1843 2302 1547 2404 1325 2460 1103 2517 955 2534 844 2567 770 2562 659 2579 622 2584 585 2584 511 2584" />
+  <path d="M4100 460L3323 1299 2731 1687 2250 2010 1843 2255 1547 2358 1325 2449 1103 2507 955 2526 844 2546 770 2559 659 2565 622 2571 585 2571 511 2571" />
  </g>
 <desc>Start of Line Chart ===========</desc>
 <desc>Points follow ...</desc>
 <desc>Line</desc>
  <g stroke-width="3" stroke="Maroon" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="9 12" fill="none" >
-  <path d="M4100 1534L3323 1929 2731 2155 2250 2302 1843 2398 1547 2477 1325 2522 1103 2562 955 2528 844 2590 770 2596 659 2607 622 2613 585 2601 511 2624" />
+  <path d="M4100 1558L3323 1945 2731 2158 2250 2300 1843 2397 1547 2475 1325 2507 1103 2584 955 2559 844 2578 770 2584 659 2597 622 2597 585 2604 511 2610" />
  </g>
 <desc>Start of Line Chart ===========</desc>
 <desc>Points follow ...</desc>
 <desc>Line</desc>
  <g stroke-width="3" stroke="Teal" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="0.3 5.7" fill="none" >
-  <path d="M4100 1703L3323 1703 2731 1590 2250 1703 1843 1929 1547 1873 1325 1873 1103 2099 955 2099 844 2099 770 2099 659 2262 622 2279 585 2291 511 2488" />
+  <path d="M4100 1558L3323 1558 2731 1558 2250 1558 1843 1816 1547 1816 1325 1816 1103 2010 955 2010 844 2010 770 2074 659 2236 622 2249 585 2242 511 2468" />
  </g>
 <desc>Start of Line Chart ===========</desc>
 <desc>Points follow ...</desc>
 <desc>Clipped Line</desc>
  <g stroke-width="3" stroke="Green" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="9 6.45 0.3 6.45" fill="none" >
-  <path d="M3191 40L2731 347 2250 291 1843 573 1547 686 1325 686 1103 573 955 686 844 573 770 460 659 404 622 404 585 404 511 630M4100 178L3627 40" />
+  <path d="M2781 40L2731 73 2250 73 1843 395 1547 460 1325 460 1103 460 955 460 844 525 770 460 659 460 622 525 585 460 511 460" />
  </g>
 <desc>Key =====</desc>
 <desc>Key - Line</desc>
@@ -14098,7 +14047,7 @@ IJKL
 </div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[31]:</div>
+<div class="prompt input_prompt">In&nbsp;[30]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-APL"><pre><span></span><span class="o">⊢</span><span class="nv">n</span><span class="kd">←</span><span class="m">5</span><span class="o">↓⌊</span><span class="m">10</span><span class="o">*</span><span class="m">0.1</span><span class="o">×⍳</span><span class="m">22</span>
@@ -14115,7 +14064,7 @@ IJKL
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[31]:</div>
+<div class="prompt output_prompt">Out[30]:</div>
 
 
 
@@ -14128,7 +14077,7 @@ IJKL
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[31]:</div>
+<div class="prompt output_prompt">Out[30]:</div>
 
 
 
@@ -14188,25 +14137,25 @@ IJKL
 <desc>Points follow ...</desc>
 <desc>Line</desc>
  <g stroke-width="3" stroke="Navy" stroke-linejoin="round" stroke-linecap="round" fill="none" >
-  <path d="M4054 460L3291 1364 2713 1816 2227 2142 1857 2318 1556 2444 1302 2537 1117 2552 978 2610 839 2632 747 2642 678 2652 631 2652 562 2657 539 2660 516 2660 469 2662" />
+  <path d="M4054 560L3291 1389 2713 1841 2227 2142 1857 2343 1556 2469 1302 2542 1117 2587 978 2612 839 2635 747 2647 678 2652 631 2655 562 2662 539 2662 516 2662 469 2665" />
  </g>
 <desc>Start of Line Chart ===========</desc>
 <desc>Points follow ...</desc>
 <desc>Clipped Line</desc>
  <g stroke-width="3" stroke="Maroon" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="9 12" fill="none" >
-  <path d="M3369 40L3291 2042 2713 2243 2227 2394 1857 2491 1556 2549 1302 2589 1117 2620 978 2635 839 2650 747 2657 678 2662 631 2667 562 2670 539 2672 516 2670 469 2675" />
+  <path d="M3370 40L3291 2042 2713 2268 2227 2394 1857 2502 1556 2574 1302 2594 1117 2622 978 2637 839 2652 747 2657 678 2665 631 2667 562 2672 539 2670 516 2675 469 2677" />
  </g>
 <desc>Start of Line Chart ===========</desc>
 <desc>Points follow ...</desc>
 <desc>Line</desc>
  <g stroke-width="3" stroke="Teal" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="0.3 5.7" fill="none" >
-  <path d="M4054 2142L3291 2168 2713 2243 2227 2243 1857 2243 1556 2268 1302 2343 1117 2343 978 2343 839 2444 747 2419 678 2419 631 2444 562 2524 539 2522 516 2529 469 2617" />
+  <path d="M4054 2117L3291 2193 2713 2293 2227 2268 1857 2268 1556 2268 1302 2368 1117 2368 978 2368 839 2444 747 2444 678 2444 631 2444 562 2517 539 2534 516 2494 469 2620" />
  </g>
 <desc>Start of Line Chart ===========</desc>
 <desc>Points follow ...</desc>
 <desc>Line</desc>
  <g stroke-width="3" stroke="Green" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="9 6.45 0.3 6.45" fill="none" >
-  <path d="M4054 1414L3291 1414 2713 1565 2227 1464 1857 1665 1556 1665 1302 1791 1117 1791 978 1816 839 1816 747 1615 678 1816 631 1816 562 1791 539 1741 516 1816 469 1791" />
+  <path d="M4054 1439L3291 1464 2713 1640 2227 1640 1857 1690 1556 1690 1302 1841 1117 1841 978 1841 839 1841 747 1841 678 1866 631 1841 562 1841 539 1841 516 1841 469 1866" />
  </g>
 <desc>Key =====</desc>
 <desc>Key - Line</desc>
@@ -14258,6 +14207,16 @@ IJKL
 <li><a href="http://docs.dyalog.com/latest/Compiler%20User%20Guide.pdf">Jay's Dyalog Compiler</a></li>
 <li><a href="http://snakeisland.com/apexup.htm">APEX: The APL Parallel Executor</a></li>
 </ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="This-webinar">This webinar<a class="anchor-link" href="#This-webinar">&#182;</a></h2><p>rikedyp.uk/webinars/FastAPL</p>
+<p>rikedyp.uk/webinars/FastAPL/nb.ipynb</p>
 
 </div>
 </div>

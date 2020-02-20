@@ -1,3 +1,30 @@
+svg {
+    height: 70%!important;
+}
+/*p {
+    font-size: 1.05em;
+}*/
+.slides {
+    width: 66vw!important;
+    position: absolute;
+    /*left: 2em!important;*/
+    font-size: 1.1em!important;
+}
+.input_area {
+    width: 48vw;       
+}
+div.output_area {
+    width: 100%;
+}
+div.output_subarea {
+    overflow-x: hidden;
+}
+}
+div.text_cell.rendered .rendered_html{
+    left: 0;
+    position: absolute;
+    width: 60vw;
+}
 .highlight .err{
 color: #19177C;
 border:none;
