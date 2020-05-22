@@ -51,12 +51,8 @@ h2, h3, h4 {
     top: 0.2em;
     position: fixed;
 }
-#back {    
-    left: 5vw;
-}
-#next {    
-    right: 5vw;       
-}
+#back {left: 5vw;}
+#next {right: 5vw;}
 .button {
     width: 5em;
     background: #eae9f3;
@@ -76,23 +72,17 @@ h2, h3, h4 {
     position: relative;
     margin: 0 1vw;
 }
-ol ol {
-    list-style-type: lower-alpha;
-}
-ol ol ol {
-    list-style-type: lower-roman;
-}
+ol ol {list-style-type: lower-alpha;}
+ol ol ol {list-style-type: lower-roman;}
 pre, code {    
     background: #3C4F76;
     color: white;
-    padding: 0.5em 1em 0.5em 1em;
+    padding: 0.3em 0.7em 0.3em 0.7em;
     overflow: auto;    
     border-radius: 0.7em;
+    font-family: "APL385";
 }
-pre {
-    margin: 0 3vw;
-}
-.language-APL {    
-    font-family: APL385;
-    font-size: 0.9em;
-}
+pre > * {padding: 0;}
+pre > * > * {padding: 0;}
+pre {margin: 0 3vw;}
+.language-APL {font-family: APL385;}
