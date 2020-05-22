@@ -37,7 +37,6 @@
 <p>For example, the catenate function <code>,</code> (comma) will join two lists together. We can use the outer product to join combinations of words from two lists. </p>
 <pre><code class="APL language-APL">      1 4 9 , 6 5 4
 1 4 9 6 5 4
-
       'joined up' , 'text vectors'
 joined uptext vectors
 
@@ -83,21 +82,33 @@ joined uptext vectors
 <pre><code class="APL language-APL">      ∘.÷⍨⍳3
 1 0.5 0.3333333333
 2 1   0.6666666667
-3 1.5 1    
-
+3 1.5 1           
       +/∘.÷⍨⍳3               ⍝ Sum of rows
 1.833333333 3.666666667 5.5
-
       +⌿∘.÷⍨⍳3               ⍝ Sum of columns
 6 3 2   
 </code></pre>
 <ol>
 <li>Making the Grade</li>
 </ol>
-<p>| | | 
-|---|---|---|
-|<strong>Score Range</strong>|<code>0-64</code>|<code>65-69</code>|<code>70-79</code>|<code>80-89</code>|<code>90-100</code>|
-|<strong>Letter Grade</strong>|F|D|C|B|A|</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Score Range</strong></td>
+<td><code>0-64</code></td>
+</tr>
+<tr>
+<td><strong>Letter Grade</strong></td>
+<td>F</td>
+</tr>
+</tbody>
+</table>
 <p>Write a function that, given an array of integer test scores in the inclusive range 0 to 100, returns a list of letter grades according to the table above.</p>
 <ol>
 <li>Optimus Prime
