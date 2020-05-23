@@ -21,6 +21,10 @@ src: url("assets/SourceCodeVariable-Roman.ttf");
     }
 }
 
+.center {
+    display: inline-grid;
+    grid-template-columns: repeat(3,1fr);
+}
 body {
     background: #fffff3;    
     font-family: SC;
