@@ -49,8 +49,9 @@ The index generator `⍳` generates integers up to the integer right argument `�
 
 So we can do an arithmetic sum as follows
 
-|Traditional Mathematical Notation (TMN) | APL |
+|  |  |
 |--|--|
+|**Traditional Mathematical Notation (TMN)** | **APL** |
 | $$ \sum_{n=1}^N n $$ | `+/⍳N`
 
 ### Order of execution

@@ -66,38 +66,40 @@ joined uptext vectors
         6 7 8 9 10 11 12         
         ```
 
-### Reduce down     
+    ### Reduce down     
 
-Reduce-first `⌿` on a matrix will reduce along columns instead of rows. 
+    Reduce-first `⌿` on a matrix will reduce along columns instead of rows. 
 
-```APL
-      ∘.÷⍨⍳3
-1 0.5 0.3333333333
-2 1   0.6666666667
-3 1.5 1           
-      +/∘.÷⍨⍳3               ⍝ Sum of rows
-1.833333333 3.666666667 5.5
-      +⌿∘.÷⍨⍳3               ⍝ Sum of columns
-6 3 2   
-```
+    ```APL
+          ∘.÷⍨⍳3
+    1 0.5 0.3333333333
+    2 1   0.6666666667
+    3 1.5 1           
+          +/∘.÷⍨⍳3               ⍝ Sum of rows
+    1.833333333 3.666666667 5.5
+          +⌿∘.÷⍨⍳3               ⍝ Sum of columns
+    6 3 2   
+    ```
 
 1. Making the Grade
 
-|   |   |   |   |   |   |
-|---|---|---|---|---|---|
-|**Score Range**|`0-64`|`65-69`|`70-79`|`80-89`|`90-100`|
-|**Letter Grade**|F|D|C|B|A|
+    |   |   |   |   |   |   |
+    |---|---|---|---|---|---|
+    |**Score Range**|`0-64`|`65-69`|`70-79`|`80-89`|`90-100`|
+    |**Letter Grade**|F|D|C|B|A|
 
-Write a function that, given an array of integer test scores in the inclusive range 0 to 100, returns a list of letter grades according to the table above.
+    Write a function that, given an array of integer test scores in the inclusive range 0 to 100, returns a list of letter grades according to the table above.
 
 1. Optimus Prime
-A prime number is divisible by only itself and `1`.
 
-Write a dfn which returns all of the prime numbers between `1` and `⍵`.
+    A prime number is divisible by only itself and `1`.
 
-```APL
-      Primes 10
-2 3 5 7
-      Primes 30
-2 3 5 7 11 13 17 19 23 29   
-``` 
+    Write a dfn which returns all of the prime numbers between `1` and `⍵`.
+
+    ```APL
+          Primes 10
+    2 3 5 7
+          Primes 30
+    2 3 5 7 11 13 17 19 23 29   
+    ```
+
