@@ -12,7 +12,7 @@
         }
       };
       window.onload = async function() {
-        todo = (await fetch ("./todo.md")).text();
+        fetch("./todo.md").then(x => x.text()).then((txt)=>{console.log(txt);todo = txt})
         sdConverter = new showdown.Converter(),
         todoHtml = sdConverter.makeHtml(todo);
         document.getElementById("content").innerHTML = todoHtml;
