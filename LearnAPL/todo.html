@@ -11,11 +11,12 @@
           inlineMath: [["$", "$"]]
         }
       };
-      window.onload = async function() {
-        fetch("./todo.md").then(x => x.text()).then((txt)=>{console.log(txt);todo = txt})
+      window.onload = async function() {        
         sdConverter = new showdown.Converter(),
-        todoHtml = sdConverter.makeHtml(todo);
-        document.getElementById("content").innerHTML = todoHtml;
+        fetch("./todo.md").then(x => x.text()).then((txt)=>{
+            console.log(txt);
+            document.getElementById("content").innerHTML = sdConverter.makeHtml(txt);
+        })        
       }
     </script>
     <script src="lib/es5/tex-mml-chtml.js"></script>    
