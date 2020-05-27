@@ -15,6 +15,7 @@
     - Chars and Nums
         - Quotes `''`, double quotes `''''`
         - Real, Complex, Engineering
+        - Format `⍕` Execute `⍎`
 - Primitives
     - `+ × - ÷ ⌹ * ⍟ ! |`
     - Reduce `/ ⌿` Scan `\ ⍀`
@@ -31,6 +32,7 @@
     - `○` 
     - `⍬ ''`
     - `⋄`
+    - `⊤ ⊥ 2⊥⍣¯1`
     
 - Selecting from Arrays
     - Link to Webinar
@@ -46,24 +48,137 @@
     - (strand assignment)←v1 v2
     - Selective assignment 
     - Indexed assignment 
+        - When is `(C[n]←C[n]+1) ≢ C[n]+←1`?
     - Modified assignment
     - `a_ó∆ø1⍙ `
     - Names do not begin with a `⎕D` digit
+    - Cannot change var to fn/op (or vice versa) on reassignment
     
+        ```APL
+              foo←{⍺+⍵}
+              foo←42
+        SYNTAX ERROR: Invalid modified assignment, or an attempt was made to change nameclass on assignment
+              foo←42
+              ∧
+        ```
+- Control Structures
+    - ppt 4, slide 89
+
+- Nested arrays
+    ppt 5
+    - Simple scalar
+    - Simple array 
+    - Nested array 
+    - Stranding
+    - Detph `≡`
+    - Floating scalars
+    - Prototypes
+    - `⊃` pick
+    - `]box on`
+        - `]disp`, `]display`
+        
+- Operators
+    - Trapezium rule & Simpson's rule problems (2018)
+    - Most useful
+        - `/ ⌿ ⍣ ⌺ ⌸ ¨ ⍤ f.g ∘.f @`
+        - `Axis[] vs Rank`
+        - Laminate `,[0.5]` 
+    - Also useful
+        - `\ ⍀ ∘ ⍤ ⍥ ⍠ ⍨ & ⌶`
+        
+- Text formatting
+    - `⍕ ⎕FMT`
+    
+- Input/Output
+    - `⎕ ⍞ ⎕VFI`
+    - `{//⎕VFI⍵}⍞`
+
+- Namespaces & Other Objects
+    - Namespaces 
+        ppt 6, slide 39...
+
 ### Using the session 
+- The workspace
 - System commands
+    - ppt4, slide 16
+    
     ```APL
-    )vars )fns )obs )save )load )erase
+    )clear
+    )vars )fns )obs )erase
+    )save )load )xload )copy )pcopy 
+    )drop ⍝ or delete on file system
     ```
+- System Variables / System Functions
+    - Cheat sheet 
+        ppt 5, slide 88/89
+        - Most common ones up front 
+        - The rest on the back / links to docs?
+    - Tradfn ⎕NC exercise
+        - create ambivalent tradfn using 0=⎕NC
+
+- Session config
+    ppt4, slide 38
+    - quadVars
+    - GUI menu
+
+- Shortcuts & UCMDs cheat sheet
+    - Shortcuts
+        - Ctrl-Home/End
+        - Shift-Enter
+        - Ctrl-Enter 
+        - Esc
+        - Shift-Esc
+        - Ctrl-UpArrow
+        - NumPad- [line numbers]
+        - NumPad/ [reformat]
+        - Ctrl-Delete 
+        - Shift-Esc 
+        - Ctrl-Shift-Backspace
+        - Ctrl-Shift-Enter 
+        - Ctrl(-Shit)-Tab 
+        
+        
+    - UCMDs 
+        - `]box -trains=tree`
+        - `]rows -fold=3`
+        - `]chart` `]plot`
+        - Where to find more?
+
+### File Handling
+ppt 7, slide 15
+- Tie numbers `⎕NTIE ⎕NUNTIE`
+- Native files `⎕N...`
+- APL Component Files `⎕F...`
+
+### Modern APL
+ppt 7 slide 35...
+- v14.0
+    - `⍤ ⌸ ≢`
+    - Dyadic `⍳` high-rank extension 
+- v16.0
+    - Where / interval-index `⍸`
+    - `⊆`
+    - `⎕CSV` `⎕JSON` 
+    - `@`
+    - `⌺`
+- v18.0
+    - Atop `⍤`
+    - Over `⍥`
+    - Unique mask `≠`
+    - `⎕C`
+    - `⎕DT`
+    - Case-insensitive match `≡⍥⎕C`
 
 ### Out in the wild
 - `⎕← ⊢ +` as Identity / Print-out functions 
     - Only use `⎕←` in production
 - Goto
+    ppt 4, slide 105
     - `→/` Goto-reduction *\*shudders\**
     - `:Goto`
     - `:Labels`
     - `→⎕LC`
+    
 
 ### Errors
 - Common errors
@@ -73,9 +188,15 @@
     - RANK
     - VALUE
     - WS FULL
-- ⎕DMX 
-- ⎕TRAP, :Trap 
-- ⎕SIGNAL
+- `⎕DMX`
+- `⎕TRAP`, `:Trap` 
+- `⎕SIGNAL`
+- Interrupts
+    ppt 4, slide 109
+- Clear last calls 
+    ppt 4, slide 116
+    - `→` "naked branch"
+    
 
 ### Terminology
 - Scalar
@@ -111,16 +232,28 @@
 - Dynamically typed
     - Bit booleans
     - Int... Float
+        - 8-byte double, 16-byte decimal
     - Complex
+        - 2×8 byte double
     - Decf
     - Engineering notation
+    - Character 
+        - 1-byte, 2-byte, 4-byte
+    - Reference
+        - e.g. Namespace, Class
+    - `⎕FR ⍝ 645 or 1287`
+    - Tolerant comparison `⎕CT`
 - Data copied only if necessary
 - Unicode (unless Classic)
+- The Stack 
+    - ppt 4, slide 58
+    - Name scope
+    - Avoid globals
+
     
 ### Tools & Interfaces
 - GUI IDE
-    - )ED / Shift-Enter
-    - Ctrl-Enter
+    - Toolbar (ppt 4, slide 50)
 - Classic vs Unicode (ppt1, slide 42)
     - Classic 
         - ⎕AV
@@ -170,7 +303,12 @@
 - support@dyalog.com
 - rpark@dyalog.com 
 
-    
+## Exercises
+- Diane
+- Perl Weekly Challenge
+- Code Golf Stack Exchange
+- APL Problem Solving Competition
+- MK ppt
 
 Tutorial
 --------
