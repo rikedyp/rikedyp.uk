@@ -1,0 +1,48 @@
+Adám : Welcome everyone. You can ask questions here, and I'll forward them to Richard.
+Adám : You're of course also free to just discuss stuff.
+mac : Hello!
+Davin : Good day, all!
+Tom : hello
+ab5tract : Hi all!
+Curtis Jones : Morning here in San Jose
+ronnie : please let me know if excel for macos is included
+Stefan Kruger : Hello.
+Adám : Copyable link: https://github.com/the-carlisle-group/XL2APL
+Adám : If you have any questions, then feel free to ask here, and I'll forward to Richard.
+RGS : what happened..?
+David White : Where'd it go?
+Adám : Oops, sorry about that. We should be back shortly.
+Adám : @RGS @DavidWhite Now we know you were paying attention :-)
+ab5tract : uh oh I'm busted ;)
+ronnie : it is too early to pose the macos apl questions
+ronnie : i shall wait until ve 18 supports the macos environment
+RGS : there he goes again :P
+RGS : oh, it must be some kbd shortcut RP has set...
+Josh : @ronnie Feel free to post your questions here. Right now RP is demonstrating Windows Only COM Interfacting, but Adam can relay them at an appropariate time
+Josh : interfacing*
+ab5tract : @ronnie I don't think Office for Mac supporting OLE is up to Dyalog to decide
+ab5tract : Office for Mac is notorious for being unable to do things that normal Office does
+Adám : Right, OLE is part of the operating system, and macOS doesn't include OLE. Office applications can communicate with each other on macOS using an ad-hoc system, but 3td party tools cannot hook into that.
+Adám : Now is a good time to ask questions to Richard here in the chat.
+Ray Cannon : Clap Clap!
+ab5tract : Golf claps!
+Davin : I like it.
+Adám : https://github.com/rikedyp/APL2XL and https://github.com/rikedyp/XL2APL
+Richard Levine : I guess you could write VNA dialog boxes for users to enter data and then feed to an APL process for proceessing?
+Richard Levine : VBA dialog boxes
+Josh : @Richard Levin absolutely
+ellis : can you see the excel formula that created the data?
+User Richard P connected
+David White : Thanks for the demos!
+RGS : ty for the demos
+ellis : if I have an excel xls file you see its value most cells have a formulas too
+Josh : do you mean from APL @ellis
+Josh : because you can from APL. Instead of getting .Value2 you can get .Formula
+ellis : I mean (say) I read in an xls file as an array, can I ask to see the formula
+ellis : great - mthanks Richard and Josh!
+Ray Cannon : It reminds me of workd I tried to do with Lotus-123 under Windows 3.1
+mac : Thanks
+Ray Cannon : Many thanks
+Curtis Jones : Thank you
+Josh : Np. You'd be surprised at the things you can do with APL and Excel via OLE automation
+Josh : Check out the documents Richard posted

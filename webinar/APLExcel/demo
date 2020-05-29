@@ -1,0 +1,51 @@
+&!
+XL←⎕NEW 'OLEClient' (⊂'ClassName' 'Excel.Application')
+
+XL.Speech.Speak⊂'Microsoft Excel speaks for me now'
+XL.Speech.Speak⊂'Let''s open Excel and connect to the workbook'
+XL.Workbooks.Open⊂'C:\Users\rpark\Documents\APL\Webinars\APLExcel\Book1.xlsx'
+XL.Visible←1
+XL.Workbooks.Count
+
+XL.Speech.Speak⊂'We can refer to a sheet by name or number'
+XL.Workbooks[1].Name
+XL.Workbooks[⊂'Book1.xlsx'].Name
+
+XL.Speech.Speak⊂'Let''s name a sheet'
+wb←XL.Workbooks[⊂'Book1.xlsx']
+sheet←wb.Sheets[1]
+
+XL.Speech.Speak⊂'We can count the used rows, columns and cells'
+sheet.UsedRange.Rows.Count
+sheet.UsedRange.Columns.Count
+sheet.UsedRange.Cells.Count
+
+XL.Speech.Speak⊂'And read the data'
+sheet.UsedRange.Value2
+⎕←numbers←sheet.Range[⊂'A2:A16'].Value2
+⎕←words←sheet.Range[⊂'B2:B16'].Value2
+
+XL.Speech.Speak⊂'Now let''s process our data'
+)copy APLExcel
+
+⎕←primes←APLOLE.JustPrimes numbers
+
+⎕←vowels←APLOLE.JustVowels words
+
+XL.Speech.Speak⊂'We can write our data to a new workbook'
+
+
+
+newbook←XL.Workbooks.Add 1
+newbook.Name
+
+newbook.SaveAs⊂'C:\Users\rpark\Documents\APL\Webinars\APLExcel\Book1OLE.xlsx'
+XL.Workbooks.Count
+newbook←XL.Workbooks[⊂'Book1OLE.xlsx']
+header ← 'Numbers' 'Primes' 'Words' 'Vowels'
+newbook.Sheets[1].Range[⊂'A1:D1'].Value2←header
+newbook.Sheets[1].Range[⊂'A2:B16'].Value2 ← numbers,primes
+newbook.Sheets[1].Range[⊂'C2:D16'].Value2 ← words,vowels
+newbook.Close 1
+wb.Close 0
+
